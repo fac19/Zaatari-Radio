@@ -1,1 +1,1 @@
-# Zataari-Radio-Frontend
+# Zaatari-Radio-Frontend
