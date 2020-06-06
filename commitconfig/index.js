@@ -11,27 +11,14 @@ module.exports = {
 const questions = [
     {
       type: 'input',
-      name: 'message',
-      message: 'GitHub commit message (required):\n',
-      validate: exists
-    },
-    {
-      type: 'input',
       name: 'issues',
-      message: 'Jira Issue ID(s) (required):\n',
+      message: 'Jira Issue ID(s) (required) e.g. ZTRI-1 ZTRI-2:\n',
       validate: exists
     },
     {
       type: 'input',
       name: 'workflow',
-      message: 'Workflow command (testing, closed, etc.) (optional):\n',
-      validate: function(input) {
-        if (input && input.indexOf(' ') !== -1) {
-          return 'Workflows cannot have spaces in smart commits. If your workflow name has a space, use a dash (-)';
-        } else {
-          return true;
-        }
-      }
+      message: 'Workflow command (in-progress, done) (optional):\n'    
     },
     {
       type: 'input',
@@ -41,8 +28,19 @@ const questions = [
     {
       type: 'input',
       name: 'comment',
-      message: 'Jira comment (optional):\n'
+      message: 'Comment (required):\n',
+      validate: exists
     },
+    {
+        type: 'input',
+        name: 'coauthorName',
+        message: "co-author username\n"
+    },
+    {
+        type: 'input',
+        name: "coauthorEmail",
+        message: "co-author email\n"
+    }
   ]
 
 function prompter(cz, commit) {
@@ -53,11 +51,12 @@ function prompter(cz, commit) {
 
 function formatCommit(commit, answers) {
   commit(filter([
-    answers.message,
     answers.issues,
     answers.workflow ? '#' + answers.workflow : undefined,
     answers.time ? '#time ' + answers.time : undefined,
     answers.comment ? '#comment ' + answers.comment : undefined,
+    answers.coauthorName ? "\n\nCo-authored-by: " + answers.coauthorName : undefined,
+    answers.coauthorEmail ? "<" + answers.coauthorEmail + ">" : undefined
   ]).join(' '));
 }
 
