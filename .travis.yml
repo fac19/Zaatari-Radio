@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - lts/*
+
+env:
+  - CODECOV_TOKEN="c0833afd-50c4-417f-bf91-49e6badbe61d"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm ci
+
+script:
+  - npm run build
+  - npm run test:report && codecov
+
+after-script:
+  - bash <(curl -s https://codecov.io/bash)
