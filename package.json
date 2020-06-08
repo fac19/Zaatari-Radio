@@ -1,42 +1,82 @@
 {
-  "name": "zaatari-radio",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./commitconfig"
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "transparent-commitizen": "^0.2.1"
-  }
+	"name": "zaatari-radio",
+	"version": "0.1.0",
+	"private": true,
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint",
+			"pretty-quick --staged",
+			"git add"
+		]
+	},
+	"dependencies": {
+		"@material-ui/core": "^4.10.1",
+		"@material-ui/icons": "^4.9.1",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts": "3.4.1",
+		"styled-components": "^5.1.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"test:report": "react-scripts test --coverage --watchAll=false && codecov",
+		"eject": "react-scripts eject",
+		"lint": "eslint .",
+		"prettify": "pretty-quick --staged"
+	},
+	"jest": {
+		"coveragePathIgnorePatterns": [
+			"<rootDir>/src/index.js"
+		]
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"**/*.js",
+			"!node_modules/**",
+			"!coverage/**"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./commitconfig"
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"codecov": "^3.7.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.1.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.21.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-react-hooks": "^2.5.0",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.9",
+		"prettier": "^2.0.5",
+		"pretty-quick": "^2.0.1",
+		"react-axe": "^3.4.1",
+		"transparent-commitizen": "^0.2.1"
+	}
 }

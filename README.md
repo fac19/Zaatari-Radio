@@ -1,5 +1,7 @@
 # Zaatari-Radio-Frontend
 
+[![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)[![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg](https://codecov.io/gh/fac19/Zaatari-Radio)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,4 +70,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
