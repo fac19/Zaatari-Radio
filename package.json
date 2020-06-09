@@ -34,7 +34,8 @@
 		"test:report": "react-scripts test --coverage --watchAll=false && codecov",
 		"eject": "react-scripts eject",
 		"lint": "eslint .",
-		"prettify": "pretty-quick --staged"
+		"prettify": "pretty-quick --staged",
+		"dev": "netlify dev"
 	},
 	"jest": {
 		"collectCoverageFrom": [
