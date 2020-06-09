@@ -13,7 +13,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { NavTitle } from '../styles/componentsStyles';
+import { NavTitle, StyledLink } from '../styles/componentsStyles';
 
 const theme = createMuiTheme({
 	palette: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 	title: {
 		flexGrow: 1,
 		position: 'relative',
-		top: '.4rem',
+		top: '.2rem',
 	},
 	drawerPaper: {
 		marginTop: '4rem',
@@ -47,6 +47,21 @@ export default function Nav(props) {
 	const classes = useStyles();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
+	const navItems = [
+		{
+			title: 'Home',
+			titleHref: '/',
+		},
+		{
+			title: 'View Workshops',
+			titleHref: '/workshops',
+		},
+		{
+			title: 'Contact',
+			titleHref: '/',
+		},
+	];
+
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
@@ -56,9 +71,9 @@ export default function Nav(props) {
 	const drawer = (
 		<>
 			<List>
-				{['Home', 'View Workshops', 'Contact'].map((text) => (
-					<ListItem button key={text}>
-						<ListItemText primary={text} />
+				{navItems.map((item) => (
+					<ListItem button key={item.title} component={StyledLink} to={item.titleHref}>
+						<ListItemText primary={item.title} />
 					</ListItem>
 				))}
 			</List>
@@ -69,8 +84,12 @@ export default function Nav(props) {
 		<ThemeProvider theme={theme}>
 			<AppBar positon="static">
 				<Toolbar color="primary">
-					<AccountBalanceIcon />
-					<NavTitle className={classes.title}>Zaatari Radio</NavTitle>
+					<StyledLink to="/">
+						<AccountBalanceIcon />
+					</StyledLink>
+					<NavTitle button className={classes.title}>
+						<StyledLink to="/">Zaatari Radio</StyledLink>
+					</NavTitle>
 					<Hidden smUp implementation="css">
 						<IconButton aria-label="open drawer" color="secondary" onClick={handleDrawerToggle}>
 							<MenuIcon />

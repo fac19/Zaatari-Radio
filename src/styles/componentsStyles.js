@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const white = '#F2F2F2';
 // const olive = '#b1b493';
@@ -32,8 +33,21 @@ const NavTitle = styled.h1`
 	font-family: DINCondensed;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 45px;
-	line-height: 45px;
+	font-size: 30px;
+	line-height: 50px;
 	color: ${white};
 `;
-export { BGYellow, Title1, NavTitle };
+
+const StyledLink = styled(Link)`
+	color: inherit;
+	text-decoration: inherit;
+	&:focus,
+	&:hover,
+	&:visited,
+	&:link,
+	&:active {
+		text-decoration: none;
+	}
+`;
+
+export { BGYellow, Title1, NavTitle, StyledLink };
