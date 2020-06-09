@@ -37,9 +37,7 @@
 	"jest": {
 		"coveragePathIgnorePatterns": [
 			"<rootDir>/src/index.js"
-		]
-	},
-	"jest": {
+		],
 		"collectCoverageFrom": [
 			"**/*.js",
 			"!node_modules/**",
