@@ -6,6 +6,8 @@ const white = '#F2F2F2';
 // const night = '#07031a';
 
 const BGYellow = styled.div`
+	position: relative;
+	top: 3.7rem;
 	width: 100%;
 	height: 56px;
 	background: #ffcb74;

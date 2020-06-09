@@ -5,7 +5,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import { ThemeProvider, makeStyles, useTheme } from '@material-ui/styles';
+import { ThemeProvider, makeStyles } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
@@ -14,26 +15,35 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import { NavTitle } from '../styles/componentsStyles';
 
+const theme = createMuiTheme({
+	palette: {
+		primary: {
+			main: '#07031A',
+		},
+		secondary: {
+			main: '#FFFFFF',
+		},
+	},
+});
+
 const useStyles = makeStyles(() => ({
 	title: {
 		flexGrow: 1,
-	},
-	drawer: {
-		width: 300,
-		flexShrink: 0,
+		position: 'relative',
+		top: '.4rem',
 	},
 	drawerPaper: {
 		marginTop: '4rem',
 		width: 190,
 	},
-	dropper: {
-		marginTop: '4rem',
+	dropperPaper: {
+		marginTop: '3.5rem',
+		width: 190,
 	},
 }));
 
 export default function Nav(props) {
 	const { window } = props;
-	const theme = useTheme();
 	const classes = useStyles();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -62,7 +72,7 @@ export default function Nav(props) {
 					<AccountBalanceIcon />
 					<NavTitle className={classes.title}>Zaatari Radio</NavTitle>
 					<Hidden smUp implementation="css">
-						<IconButton aria-label="open drawer" color="contrast" onClick={handleDrawerToggle}>
+						<IconButton aria-label="open drawer" color="secondary" onClick={handleDrawerToggle}>
 							<MenuIcon />
 						</IconButton>
 					</Hidden>
@@ -70,7 +80,16 @@ export default function Nav(props) {
 			</AppBar>
 			<nav className={classes.drawer} aria-label="Home View Workshops Contact">
 				<Hidden smUp implementation="css">
-					<Drawer className={classes.dropper} container={container} variant="temporary" anchor="top" open={mobileOpen} onClose={handleDrawerToggle}>
+					<Drawer
+						classes={{
+							paper: classes.dropperPaper,
+						}}
+						container={container}
+						variant="temporary"
+						anchor="left"
+						open={mobileOpen}
+						onClose={handleDrawerToggle}
+					>
 						{drawer}
 					</Drawer>
 				</Hidden>
@@ -80,7 +99,7 @@ export default function Nav(props) {
 							paper: classes.drawerPaper,
 						}}
 						variant="permanent"
-						anchor="right"
+						anchor="left"
 						open
 					>
 						{drawer}
@@ -92,5 +111,5 @@ export default function Nav(props) {
 }
 
 Nav.propTypes = {
-	window: PropTypes.number().isRequired,
+	window: PropTypes.shape({}).isRequired,
 };
