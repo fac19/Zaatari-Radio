@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -42,8 +41,7 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-export default function Nav(props) {
-	const { window } = props;
+export default function Nav() {
 	const classes = useStyles();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -65,8 +63,6 @@ export default function Nav(props) {
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
-
-	const container = window !== undefined ? () => window().document.body : undefined;
 
 	const drawer = (
 		<>
@@ -103,7 +99,6 @@ export default function Nav(props) {
 						classes={{
 							paper: classes.dropperPaper,
 						}}
-						container={container}
 						variant="temporary"
 						anchor="left"
 						open={mobileOpen}
@@ -128,7 +123,3 @@ export default function Nav(props) {
 		</ThemeProvider>
 	);
 }
-
-Nav.propTypes = {
-	window: PropTypes.shape({}).isRequired,
-};
