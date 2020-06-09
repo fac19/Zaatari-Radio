@@ -5,5 +5,5 @@ import App from './App';
 
 test('Renders Page', () => {
 	render(<App />);
-	screen.getByText('Home');
+	screen.getAllByText('Home');
 });
