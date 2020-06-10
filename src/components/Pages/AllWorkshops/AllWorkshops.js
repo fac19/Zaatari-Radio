@@ -1,6 +1,6 @@
 import React from 'react';
-import { Title1, BGYellow } from '../styles/componentsStyles';
-import api from '../api/api';
+import { Title1, BGYellow } from '../../../styles/componentsStyles';
+import api from '../../../api/api';
 
 export default function AllWorkshops() {
 	const [error, setError] = React.useState('');
