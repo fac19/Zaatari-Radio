@@ -11,6 +11,7 @@ export default function WorkshopWorksheet({ match: { params } }) {
 		</>
 	);
 }
+
 WorkshopWorksheet.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
