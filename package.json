@@ -21,12 +21,16 @@
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
+		"@typescript-eslint/parser": "^3.2.0",
+		"airtable": "^0.8.1",
+		"inquirer": "^7.1.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.1",
-		"styled-components": "^5.1.1"
+		"styled-components": "^5.1.1",
+		"typescript": "^3.9.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -35,7 +39,8 @@
 		"test:report": "react-scripts test --coverage --watchAll=false && codecov",
 		"eject": "react-scripts eject",
 		"lint": "eslint .",
-		"prettify": "pretty-quick --staged"
+		"prettify": "pretty-quick --staged",
+		"dev": "netlify dev"
 	},
 	"jest": {
 		"collectCoverageFrom": [
@@ -71,6 +76,7 @@
 		"eslint-plugin-react": "^7.20.0",
 		"eslint-plugin-react-hooks": "^2.5.0",
 		"husky": "^4.2.5",
+		"jest-fetch-mock": "^3.0.3",
 		"lint-staged": "^10.2.9",
 		"prettier": "^2.0.5",
 		"pretty-quick": "^2.0.1",
