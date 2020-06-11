@@ -1,3 +1,9 @@
 .MuiBackdrop-root {
 	opacity: 0 !important;
 }
+
+@media only screen and (min-width: 600px) {
+	main {
+		margin-left: 190px;
+	}
+}

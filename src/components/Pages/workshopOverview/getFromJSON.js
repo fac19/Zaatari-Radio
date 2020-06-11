@@ -1,44 +1,17 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Title1, BGYellow } from '../../styles/componentsStyles';
-import api from '../../api/api';
-
-export default function WorkshopOverview({ match: { params } }) {
-	const [errorState, setErrorState] = React.useState('');
-	// const [workshops, setWorkshop] = React.useState({});
-
-	//   console.log(params);
-	useEffect(() => {
-		api
-			.getSpecificWorkshop(params.ID)
-			.then((res) => {
-				console.log(res);
-				return res;
-			})
-			.catch((err) => {
-				console.log(err);
-				setErrorState(
-					<h2>
-						<br />
-						<br />
-						This workshop couldnt be found
-					</h2>,
-				);
-				// Think we are setting state here with the err message
-				return err;
-			});
-	}, []);
-
-	return (
-		<>
-			<BGYellow>
-				<Title1>Workshop Overview</Title1>
-			</BGYellow>
-			{errorState}
-		</>
-	);
+export default function getFromJSON(obj) {
+  const fields = obj?._rawJson?.fields;
+  const simpleObj = {
+    overview: fields.overview,
+    images: fields.carousel_pictures,
+    content: fields.content,
+    feedback: fields.feedback,
+    average_rating: fields.average_rating,
+    title: fields.title,
+    table_of_contents: fields.table_of_contents,
+    workshop_authors: fields.workshop_authors,
+  };
+  return simpleObj;
 }
-// reclXZv3JtH77KpzW
 
 /*
 {
@@ -150,10 +123,3 @@ export default function WorkshopOverview({ match: { params } }) {
 }
 
 */
-WorkshopOverview.propTypes = {
-	match: PropTypes.shape({
-		params: PropTypes.shape({
-			ID: PropTypes.string,
-		}),
-	}).isRequired,
-};
