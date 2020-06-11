@@ -16,13 +16,3 @@ export default function Home() {
 		</>
 	);
 }
-/*
-
-	section 
-			H2
-			P
-			Button
-	section 
-		H2
-		P
-*/
