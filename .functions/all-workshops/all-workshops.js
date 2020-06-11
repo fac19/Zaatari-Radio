@@ -7,7 +7,7 @@ const Airtable = require('airtable');
 const base = new Airtable({ apiKey }).base(apiBaseId);
 
 exports.handler = function (event, context, callback) {
-	console.log('all-workshop handler called');
+	// console.log('all-workshop handler called');
 	const allRecords = [];
 	base('workshops')
 		.select({

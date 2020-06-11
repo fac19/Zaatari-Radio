@@ -4,7 +4,7 @@ import Tag from '../../tag';
 
 export default function Home() {
 	const [currentTags, setCurrentTags] = React.useState([]);
-	console.log('Home -> currentTags', currentTags);
+	// console.log('Home -> currentTags', currentTags);
 
 	return (
 		<>

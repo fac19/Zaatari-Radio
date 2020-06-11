@@ -3,12 +3,13 @@ const apiBaseId = process.env.AIRTABLE_BASE;
 const Airtable = require('airtable');
 
 // const base = new Airtable({ apiKey }).base(apiBaseId);
-var base = new Airtable({ apiKey: 'keyexOnoJtMSO8dka' }).base('appW2989WcgTxarh0');
+var base = new Airtable({ apiKey }).base(apiBaseId);
 
 exports.handler = function (event, context, callback) {
-	console.log('In specific-workshop handler!');
+	const ID = event.queryStringParameters.id;
+	console.log('exports.handler -> ID', ID);
 
-	base('workshops').find('reclXZv3JtH77KpzW', function (err, record) {
+	base('workshops').find(ID, function (err, record) {
 		if (err) {
 			callback(err);
 		} else {

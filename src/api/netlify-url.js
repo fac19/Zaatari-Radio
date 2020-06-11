@@ -1,1 +1,1 @@
-export default '.netlify/functions/';
+export default '/.netlify/functions/';

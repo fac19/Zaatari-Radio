@@ -25,6 +25,8 @@ const StyledImage = styled.img`
 const StyledCardTitle = styled.h2`
 	font-family: DINCondensed;
 	font-size: 30px;
+	margin: 0;
+	padding: 8px 0 5px 0;
 `;
 
 const StyledButton = styled.a`
@@ -33,6 +35,7 @@ const StyledButton = styled.a`
 
 const StyledButtonContainer = styled.div`
 	background: #ffcb74;
+	margin: 0 40% 0 0.5rem;
 `;
 
 export default function AllWorkshops() {
