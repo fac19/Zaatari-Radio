@@ -17,16 +17,18 @@ function App() {
 			<Router>
 				<div className="App">
 					<Nav />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/workshops" component={AllWorkshops} />
-						<Route exact path="/workshop/overview/" component={WorkshopOverview} />
-						<Route exact path="/workshop/feedback/:ID" component={WorkshopFeedback} />
-						<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
-						<Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} />
-					</Switch>
+					<main>
+						<Switch>
+							<Route exact path="/">
+								<Home />
+							</Route>
+							<Route exact path="/workshops" component={AllWorkshops} />
+							<Route exact path="/workshop/overview/" component={WorkshopOverview} />
+							<Route exact path="/workshop/feedback/:ID" component={WorkshopFeedback} />
+							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
+							<Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} />
+						</Switch>
+					</main>
 				</div>
 			</Router>
 		</>
