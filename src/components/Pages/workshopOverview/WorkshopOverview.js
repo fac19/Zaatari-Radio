@@ -7,73 +7,73 @@ import Intro from './TitleSection';
 import Header from './header';
 
 export default function WorkshopOverview({ match: { params } }) {
-  const [errorState, setErrorState] = React.useState('');
-  const [workshop, setWorkshop] = React.useState({});
+	const [errorState, setErrorState] = React.useState('');
+	const [workshop, setWorkshop] = React.useState({});
+	console.log(params);
+	useEffect(() => {
+		api
+			.getSpecificWorkshop(params.ID)
+			.then((res) => {
+				setWorkshop(getFromJSON(res));
+				return res;
+			})
+			.catch((err) => {
+				console.log(err);
+				setErrorState(
+					<h2>
+						<br />
+						<br />
+						This workshop couldnt be found
+					</h2>,
+				);
+				// Think we are setting state here with the err message
+				return err;
+			});
+	}, [params.ID]);
 
-  useEffect(() => {
-    api
-      .getSpecificWorkshop(params.id)
-      .then((res) => {
-        setWorkshop(getFromJSON(res));
-        return res;
-      })
-      .catch((err) => {
-        console.log(err);
-        setErrorState(
-          <h2>
-            <br />
-            <br />
-            This workshop couldnt be found
-          </h2>,
-        );
-        // Think we are setting state here with the err message
-        return err;
-      });
-  }, [params.id]);
+	return (
+		<>
+			<Header images={workshop.images} />
+			<Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
 
-  return (
-    <>
-      <Header images={workshop.images} />
-      <Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
-
-      {workshop.title || ''}
-      {errorState}
-    </>
-  );
+			{workshop.title || ''}
+			{errorState}
+		</>
+	);
 }
 
 WorkshopOverview.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }).isRequired,
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			ID: PropTypes.string,
+		}),
+	}).isRequired,
 };
 
-/* 
+/*
 <>
       Header
         Image Background
 
-     section   
-     Div 
+     section
+     Div
         H1
      Author
      Equipment || Null
-     
+
      section
         H2
          P
-     Div 
+     Div
         Button
         Button
 
 
-    section   
+    section
        H2
        Article
           P
-          Div 
+          Div
              P
 
 </>
