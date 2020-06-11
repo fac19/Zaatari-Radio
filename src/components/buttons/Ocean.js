@@ -2,10 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import colours from '../../styles/colours';
 
 const BlueButton = styled.button`
-	background-color: #4f8a8b;
-	color: #f2f2f2;
+	background-color: ${colours.ocean};
+	color: ${colours.offWhite};
 	font-size: 1em;
 	margin: 1em;
 	height: 39px;

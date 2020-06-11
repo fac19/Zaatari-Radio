@@ -4,15 +4,6 @@ import { screen, render } from '@testing-library/react';
 import Nav from './Nav';
 import App from '../App';
 
-test('Renders Nav Bar', () => {
-	render(
-		<App>
-			<Nav />
-		</App>,
-	);
-	screen.getByText('Zaatari Radio');
-});
-
 test('Renders Contact link in nav bar', () => {
 	render(
 		<App>
