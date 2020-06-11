@@ -6,6 +6,7 @@ import api from '../../../api/api';
 
 const StyledMain = styled.section`
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	margin-top: 4rem;
@@ -68,43 +69,30 @@ export default function AllWorkshops() {
 			.then((result) => {
 				setAllWorkshopData(result.records);
 			})
-			.catch((err) => {
-				setError(err.details);
+			.catch(() => {
+				setError('There was a problem getting your data');
 			});
 	}, []);
 
 	function createWorkshopList() {
-		const data = allWorkshopData[0];
-		// const workshopCardData = {
-		// 	imageUrl: data.fields.carousel_pictures[0].url,
-		// 	title: data.fields.title,
-		// 	time: data.fields.table_of_contents,
-		// 	comments: data.fields.feedback.length,
-		// 	rating: data.fields.average_rating
-		// }
-
-		// console.log('createWorkshopList -> allWorkshopData', allWorkshopData);
-		// console.log("createWorkshopList -> workshopCardData", workshopCardData)
-
-		return (
-			<StyledArticle>
-				<StyledImage src={data.fields.carousel_pictures[0].url} />
-
-				<StyledButtonContainer>
-					<StyledButton as={Link} to="/">
-						<StyledCardTitle>{data.fields.title}</StyledCardTitle>
-					</StyledButton>
-				</StyledButtonContainer>
-				<StyledWorkshopDetails>
-					<StyledSpan>Time: {data.fields.table_of_contents}</StyledSpan>
-					<StyledSpan>Comments: {data.fields.feedback.length}</StyledSpan>
-					<StyledSpan>Rating: {data.fields.average_rating}</StyledSpan>
-				</StyledWorkshopDetails>
-				{/* <div>
-						<li>reclXZv3JtH77KpzW</li>
-					</div> */}
-			</StyledArticle>
-		);
+		const dataArr = allWorkshopData.map((data) => {
+			return (
+				<StyledArticle>
+					<StyledImage src={data.fields.carousel_pictures[0].url} />
+					<StyledButtonContainer>
+						<StyledButton as={Link} to={data.id}>
+							<StyledCardTitle>{data.fields.title}</StyledCardTitle>
+						</StyledButton>
+					</StyledButtonContainer>
+					<StyledWorkshopDetails>
+						<StyledSpan>Time: {data.fields.table_of_contents}</StyledSpan>
+						<StyledSpan>Comments: {data.fields.feedback.length}</StyledSpan>
+						<StyledSpan>Rating: {data.fields.average_rating}</StyledSpan>
+					</StyledWorkshopDetails>
+				</StyledArticle>
+			);
+		});
+		return dataArr;
 	}
 
 	return (
