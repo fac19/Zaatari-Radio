@@ -15,6 +15,7 @@ export default function Header({ images, date, tags }) {
 
 	const Container = styled.header`
 		background: url(${image});
+		background-size: cover;
 		min-height: 20vh;
 	`;
 	return (
