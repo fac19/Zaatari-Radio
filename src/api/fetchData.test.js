@@ -14,6 +14,6 @@ describe('testing fetchData', () => {
 			expect(res.data).toBe(5);
 		});
 		expect(fetch.mock.calls.length).toEqual(1);
-		expect(fetch.mock.calls[0][0]).toBe('.netlify/functions/all-workshops');
+		expect(fetch.mock.calls[0][0]).toBe('/.netlify/functions/all-workshops');
 	});
 });

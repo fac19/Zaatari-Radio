@@ -6,8 +6,8 @@ const api = {
 		return data;
 	},
 
-	getSpecificWorkshop: async () => {
-		const data = await fetchData('GET', 'specific-workshop');
+	getSpecificWorkshop: async (id) => {
+		const data = await fetchData('GET', `specific-workshop/?id=${id}`);
 		return data;
 	},
 };
