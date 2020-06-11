@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import colours from '../../styles/colours';
 
 const Pair = styled.article`
-	max-width: 40%;
+	max-width: 500px;
 	margin: 0 auto 2em auto;
 `;
 
@@ -23,7 +23,7 @@ const Section = styled.section`
 `;
 
 const Title = styled.h2`
-	max-width: 40%;
+	max-width: 500px;
 	margin: 0 auto;
 `;
 

@@ -11,7 +11,7 @@ export default function Browse() {
 				to be aired on FM radio within the camp.
 			</Text>
 
-			<SandButton innerText="Go To The Workshops" />
+			<SandButton innerText="Go To The Workshops" to="/workshops" />
 		</Section>
 	);
 }
