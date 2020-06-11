@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import colours from '../../styles/colours';
 
 const Pair = styled.article`
 	max-width: 40%;
@@ -17,8 +18,8 @@ function FAQ({ q, a }) {
 }
 
 const Section = styled.section`
-  background-color: #f1f1f1;
-  font-family: Roboto;s
+	background-color: ${colours.offWhite};
+	font-family: Roboto;
 `;
 
 const Title = styled.h2`
