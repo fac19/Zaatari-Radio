@@ -6,6 +6,9 @@ import Contribute from './contribute';
 import FAQs from './faqs';
 
 export default function Home() {
+	//   const [currentTags, setCurrentTags] = React.useState([]);
+	// console.log('Home -> currentTags', currentTags);
+
 	return (
 		<>
 			<LanderSection />
