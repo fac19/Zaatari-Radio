@@ -1,16 +1,17 @@
 export default function getFromJSON(obj) {
-  const fields = obj?._rawJson?.fields;
-  const simpleObj = {
-    overview: fields.overview,
-    images: fields.carousel_pictures,
-    content: fields.content,
-    feedback: fields.feedback,
-    average_rating: fields.average_rating,
-    title: fields.title,
-    table_of_contents: fields.table_of_contents,
-    workshop_authors: fields.workshop_authors,
-  };
-  return simpleObj;
+	const fields = obj?._rawJson?.fields;
+	console.log(fields);
+	const simpleObj = {
+		overview: fields.overview,
+		images: fields.carousel_pictures,
+		content: fields.content,
+		feedback: fields.feedback,
+		average_rating: fields.average_rating,
+		title: fields.title,
+		table_of_contents: fields.table_of_contents,
+		workshop_authors: fields.workshop_authors,
+	};
+	return simpleObj;
 }
 
 /*

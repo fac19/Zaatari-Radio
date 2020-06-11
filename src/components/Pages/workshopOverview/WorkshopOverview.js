@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import api from '../../../api/api';
 import getFromJSON from './getFromJSON';
-import Intro from './TitleSection';
 
+import Intro from './TitleSection';
 import Header from './header';
 
 export default function WorkshopOverview({ match: { params } }) {
@@ -15,7 +16,6 @@ export default function WorkshopOverview({ match: { params } }) {
 			.getSpecificWorkshop(params.ID)
 			.then((res) => {
 				setWorkshop(getFromJSON(res));
-				return res;
 			})
 			.catch((err) => {
 				console.log(err);
@@ -26,8 +26,6 @@ export default function WorkshopOverview({ match: { params } }) {
 						This workshop couldnt be found
 					</h2>,
 				);
-				// Think we are setting state here with the err message
-				return err;
 			});
 	}, [params.ID]);
 
