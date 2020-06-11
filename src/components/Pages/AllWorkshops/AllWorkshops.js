@@ -8,7 +8,6 @@ export default function AllWorkshops() {
 		api
 			.getWorkshops()
 			.then((result) => {
-				console.log(result);
 				return result;
 			})
 			.catch((err) => {

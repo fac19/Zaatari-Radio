@@ -1,11 +1,13 @@
 const apiKey = process.env.AIRTABLE_KEY;
+
 const apiBaseId = process.env.AIRTABLE_BASE;
+
 const Airtable = require('airtable');
 
 const base = new Airtable({ apiKey }).base(apiBaseId);
 
 exports.handler = function (event, context, callback) {
-	console.log(3);
+	console.log('all-workshop handler called');
 	const allRecords = [];
 	base('workshops')
 		.select({
