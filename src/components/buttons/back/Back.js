@@ -3,11 +3,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import colours from '../../styles/colours';
+import variables from '../../../styles';
 
 const BlackButton = styled.button`
-	background-color: ${colours.night};
-	color: ${colours.offWhite};
+	background-color: ${variables.night};
+	color: ${variables.offWhite};
 	font-size: 1em;
 	margin: 1em;
 	height: 39px;

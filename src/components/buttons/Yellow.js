@@ -2,11 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import colours from '../../styles/colours';
+import vars from '../../styles';
 
 const YellowButton = styled.button`
-	background-color: ${colours.sand};
-	color: ${colours.night};
+	background-color: ${vars.sand};
+	color: ${vars.night};
 	font-size: 1em;
 	height: 43px;
 	border-style: none;

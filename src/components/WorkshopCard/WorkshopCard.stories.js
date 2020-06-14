@@ -5,6 +5,7 @@ export default {
 	title: 'WorkshopCard',
 };
 
+// Need to provide data to story
 export const defaultCard = () => {
 	WorkshopCard();
 };
