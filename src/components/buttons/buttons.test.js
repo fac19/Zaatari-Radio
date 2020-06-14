@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import BackButton from './Back';
+import BackButton from './BackButton';
 import OceanButton from './Ocean';
 import OliveButton from './Olive';
 

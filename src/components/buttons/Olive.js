@@ -2,11 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import colours from '../../styles/colours';
+import * as vars from '../../styles/variables';
 
 const GreyButton = styled.button`
-	background-color: ${colours.olive};
-	color: ${colours.offWhite};
+	background-color: ${vars.olive};
+	color: ${vars.offWhite};
 	font-size: 1em;
 	margin: 1em;
 	height: 39px;
