@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import imageOne from '../../../Images/Image1.png';
 import imageTwo from '../../../Images/Image2.png';
