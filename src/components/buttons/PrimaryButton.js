@@ -5,38 +5,37 @@ import styled from 'styled-components';
 import * as vars from '../../styles/variables';
 
 const SC = {
-	LandingButton: styled.button`
-		background-color: ${vars.sand};
-		color: ${vars.night};
+	PrimaryButton: styled.button`
+		background-color: ${vars.ocean};
+		color: ${vars.offWhite};
 		font-size: 1em;
-		height: ${vars.medButtonHeight};
+		margin: 1em;
+		height: ${vars.smallButtonHeight};
 		border-style: none;
 		font-family: Roboto;
 		font-style: normal;
-		font-weight: 300;
-		font-size: 21.216px;
-		line-height: 25px;
-		width: auto;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+
 		display: flex;
 		align-items: center;
 		text-align: center;
 		padding: 0 0.8em 0 0.8em;
-		margin: 45px auto;
-		cursor: pointer;
 	`,
 };
 
-export default function LandingButton({ innerText, to }) {
+export default function PrimaryButton({ innerText, to }) {
 	const history = useHistory();
 
 	function handleClick() {
 		history.push(to);
 	}
 
-	return <SC.LandingButton onClick={handleClick}>{innerText}</SC.LandingButton>;
+	return <SC.PrimaryButton onClick={handleClick}>{innerText}</SC.PrimaryButton>;
 }
 
-LandingButton.propTypes = {
+PrimaryButton.propTypes = {
 	innerText: PropTypes.string.isRequired,
 	to: PropTypes.string.isRequired,
 };

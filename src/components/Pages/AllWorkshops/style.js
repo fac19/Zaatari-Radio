@@ -8,4 +8,13 @@ export const Main = styled.section`
 	margin-top: 4rem;
 `;
 
-export const otherStyle = null;
+export const AllWorkshopHeader = styled.div`
+	position: relative;
+	top: 3.7rem;
+	width: 100%;
+	height: 56px;
+	background: #ffcb74;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;

@@ -1,8 +1,8 @@
 import React from 'react';
 import * as SC from './style';
-import { Title1, BGYellow } from '../../../styles/componentsStyles';
-import api from '../../../api/api';
+import { Title1 } from '../../../styles/componentsStyles';
 import WorkshopCard from '../../WorkshopCard/WorkshopCard';
+import api from '../../../api/api';
 
 export default function AllWorkshops() {
 	const [allWorkshopData, setAllWorkshopData] = React.useState(null);
@@ -27,10 +27,10 @@ export default function AllWorkshops() {
 
 	return (
 		<>
-			<BGYellow>
+			<SC.AllWorkshopHeader>
 				{error || ''}
 				<Title1>Workshops</Title1>
-			</BGYellow>
+			</SC.AllWorkshopHeader>
 			<SC.Main>{allWorkshopData ? createWorkshopList() : <h1>Loading...</h1>}</SC.Main>
 		</>
 	);
