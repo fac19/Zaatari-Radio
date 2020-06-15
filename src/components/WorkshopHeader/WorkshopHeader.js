@@ -6,7 +6,6 @@ import * as SC from './style';
 
 export default function WorkshopHeader({ images, date, tags, title }) {
 	const image = images ? images[0]?.url : '';
-
 	const ImgDiv = styled.div`
 		background: url(${image});
 		background-size: cover;
