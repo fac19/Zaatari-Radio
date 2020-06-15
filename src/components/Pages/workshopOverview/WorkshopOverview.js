@@ -41,11 +41,7 @@ export default function WorkshopOverview({ match: { params } }) {
 		<MainContainer>
 			<Header images={workshop.images} />
 			<Intro title={workshop.title} authorArr={workshop.workshop_authors} equipment={null} />
-			<Main
-				content={`This is workshop text that needs inserting from the airtable and is currently 
-		  about Covid 19 and how we can prevent the spread of the virus in Zataari. It is recorded 
-		  in Arabic and has written worksheets download`}
-			/>
+			<Main content={workshop.overview} />
 			<Comments feedbackArr={workshop.feedback} />
 			<BackButton />
 			{errorState}
