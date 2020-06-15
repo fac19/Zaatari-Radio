@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Home from './components/Pages/Home/Home';
+// import Home from './components/Pages/Home/Home';
 import Nav from './components/Nav';
-import AllWorkshops from './components/Pages/AllWorkshops/AllWorkshops';
+// import AllWorkshops from './components/Pages/AllWorkshops/AllWorkshops';
 import WorkshopOverview from './components/Pages/workshopOverview/WorkshopOverview';
 // import WorkshopFeedback from './components/Pages/WorkshopFeedback';
 // import WorkshopWorksheet from './components/Pages/WorkshopWorksheet';
@@ -20,10 +20,10 @@ function App() {
 					<Nav />
 					<main>
 						<Switch>
-							<Route exact path="/">
-								<Home />
-							</Route>
-							<Route exact path="/workshops" component={AllWorkshops} />
+							{/* <Route exact path="/"> */}
+							{/* <Home /> */}
+							{/* </Route> */}
+							{/* <Route exact path="/workshops" component={AllWorkshops} /> */}
 							<Route exact path="/workshop/overview/:ID" component={WorkshopOverview} />
 							{/* <Route exact path="/workshop/feedback/:ID" component={WorkshopFeedback} />
 							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />

@@ -5,12 +5,16 @@ import api from '../../../api/api';
 import getFromJSON from './getFromJSON';
 
 import Intro from './TitleSection';
+import Main from './MainSection';
 import Header from './header';
+import Comments from './Comments';
+
+import BackButton from '../../buttons/BackButton';
 
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	console.log(params);
+	// console.log(params);
 	useEffect(() => {
 		api
 			.getSpecificWorkshop(params.ID)
@@ -33,8 +37,13 @@ export default function WorkshopOverview({ match: { params } }) {
 		<>
 			<Header images={workshop.images} />
 			<Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
-
-			{workshop.title || ''}
+			<Main
+				content={`This is workshop text that needs inserting from the airtable and is currently 
+		  about Covid 19 and how we can prevent the spread of the virus in Zataari. It is recorded 
+		  in Arabic and has written worksheets download`}
+			/>
+			<Comments />
+			<BackButton />
 			{errorState}
 		</>
 	);

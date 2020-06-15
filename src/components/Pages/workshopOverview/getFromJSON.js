@@ -1,6 +1,6 @@
 export default function getFromJSON(obj) {
 	const fields = obj?._rawJson?.fields;
-	console.log(fields);
+	// console.log(fields);
 	const simpleObj = {
 		overview: fields.overview,
 		images: fields.carousel_pictures,
