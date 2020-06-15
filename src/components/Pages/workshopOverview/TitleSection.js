@@ -1,30 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import vars from '../../../styles';
+// import vars from '../../../styles';
 import api from '../../../api/api';
 
 const Section = styled.section``;
-
-const TitleContainer = styled.div`
-	background: ${vars.sand};
-	display: flex;
-`;
-
-const WorshopTitle = styled.h1`
-	position: relative;
-	font-family: DIN Condensed;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 45px;
-	line-height: 54px;
-	display: flex;
-	align-items: center;
-	text-transform: uppercase;
-	color: ${vars.night};
-	margin: 0 auto;
-	top: 0.4rem;
-`;
 
 const Author = styled.p`
 	font-family: Roboto;
@@ -49,7 +29,7 @@ const AuthorSpan = styled.span`
 	text-align: right;
 `;
 
-export default function Intro({ title, authorArr, equipment }) {
+export default function Intro({ authorArr, equipment }) {
 	const [authors, setAuthors] = useState([]);
 	const [errorState, setErrorState] = React.useState('');
 
@@ -79,9 +59,6 @@ export default function Intro({ title, authorArr, equipment }) {
 
 	return (
 		<Section>
-			<TitleContainer>
-				<WorshopTitle>{title}</WorshopTitle>
-			</TitleContainer>
 			{authors.map((author) => (
 				<>
 					<Author>
@@ -99,7 +76,6 @@ export default function Intro({ title, authorArr, equipment }) {
 }
 
 Intro.propTypes = {
-	title: PropTypes.string.isRequired,
 	authorArr: PropTypes.arrayOf(PropTypes.string).isRequired,
 	equipment: PropTypes.string.isRequired,
 };

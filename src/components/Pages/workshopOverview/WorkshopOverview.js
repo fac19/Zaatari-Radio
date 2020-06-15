@@ -7,8 +7,9 @@ import getFromJSON from './getFromJSON';
 
 import Intro from './TitleSection';
 import Main from './MainSection';
-import Header from './header';
 import Comments from './Comments';
+
+import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
 
 import BackButton from '../../buttons/BackButton';
 
@@ -25,8 +26,7 @@ export default function WorkshopOverview({ match: { params } }) {
 			.then((res) => {
 				setWorkshop(getFromJSON(res));
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
 				setErrorState(
 					<h2>
 						<br />
@@ -39,11 +39,11 @@ export default function WorkshopOverview({ match: { params } }) {
 
 	return (
 		<MainContainer>
-			<Header images={workshop.images} />
-			<Intro title={workshop.title} authorArr={workshop.workshop_authors} equipment={null} />
+			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
+			<Intro authorArr={workshop.workshop_authors} equipment={null} />
 			<Main content={workshop.overview} />
 			<Comments feedbackArr={workshop.feedback} />
-			<BackButton />
+			<BackButton to="/workshops" />
 			{errorState}
 		</MainContainer>
 	);
@@ -56,32 +56,3 @@ WorkshopOverview.propTypes = {
 		}),
 	}).isRequired,
 };
-
-/*
-<>
-      Header
-        Image Background
-
-     section
-     Div
-        H1
-     Author
-     Equipment || Null
-
-     section
-        H2
-         P
-     Div
-        Button
-        Button
-
-
-    section
-       H2
-       Article
-          P
-          Div
-             P
-
-</>
-*/

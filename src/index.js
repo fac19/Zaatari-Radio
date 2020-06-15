@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import './fonts/DINCondensed-Bold.ttf';
 
 if (process.env.NODE_ENV !== 'production') {
 	import('react-axe').then((axe) => {
