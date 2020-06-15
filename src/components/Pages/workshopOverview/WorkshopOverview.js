@@ -4,21 +4,20 @@ import PropTypes from 'prop-types';
 import api from '../../../api/api';
 import getFromJSON from './getFromJSON';
 
-import Intro from './TitleSection';
-import Header from './header';
+// import Intro from './TitleSection';
+// import Header from './header';
+import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
 
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	console.log(params);
 	useEffect(() => {
 		api
 			.getSpecificWorkshop(params.ID)
 			.then((res) => {
 				setWorkshop(getFromJSON(res));
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
 				setErrorState(
 					<h2>
 						<br />
@@ -31,10 +30,8 @@ export default function WorkshopOverview({ match: { params } }) {
 
 	return (
 		<>
-			<Header images={workshop.images} />
-			<Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
-
-			{workshop.title || ''}
+			<WorkshopHeader images={workshop.images} date={workshop.date} tags={workshop.tags} title={workshop.title} />
+			{/* <Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} /> */}
 			{errorState}
 		</>
 	);
