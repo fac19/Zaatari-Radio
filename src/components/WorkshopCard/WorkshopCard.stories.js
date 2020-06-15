@@ -88,7 +88,6 @@ export default {
 // 				},
 // 			},
 // 		],
-// 		table_of_contents: '3',
 // 		title: 'Workshop uno',
 // 	},
 // };
