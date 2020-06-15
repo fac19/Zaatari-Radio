@@ -1,8 +1,8 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import BackButton from './Back';
-import OceanButton from './Ocean';
-import OliveButton from './Olive';
+import BackButton from './BackButton';
+import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './SecondaryButton';
 
 test('BackButton contains the text "BACK"', () => {
 	// !(screen.getByText("Back"))
@@ -10,13 +10,13 @@ test('BackButton contains the text "BACK"', () => {
 	screen.getAllByText('BACK');
 });
 
-test('OceanButton contains text passed in as a prop without modifying it', () => {
-	render(<OceanButton to="nowhere" innerText="Lorem ipsum" />);
+test('PrimaryButton contains text passed in as a prop without modifying it', () => {
+	render(<PrimaryButton to="nowhere" innerText="Lorem ipsum" />);
 	screen.getAllByText('Lorem ipsum');
 });
 
-test('OliveButton contains text passed in as a prop without modifying it', () => {
-	render(<OliveButton to="nowhere" innerText="hello" />);
+test('SecondaryButton contains text passed in as a prop without modifying it', () => {
+	render(<SecondaryButton to="nowhere" innerText="hello" />);
 	screen.getAllByText('hello');
 });
 

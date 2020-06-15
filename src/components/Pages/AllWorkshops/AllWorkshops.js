@@ -1,16 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Title1, BGYellow } from '../../../styles/componentsStyles';
+import * as SC from './style';
+import { Title1 } from '../../../styles/componentsStyles';
+import WorkshopCard from '../../WorkshopCard/WorkshopCard';
 import api from '../../../api/api';
-import WorkshopCard from './WorkshopCard';
-
-const StyledMain = styled.section`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-top: 4rem;
-`;
 
 export default function AllWorkshops() {
 	const [allWorkshopData, setAllWorkshopData] = React.useState(null);
@@ -35,11 +27,11 @@ export default function AllWorkshops() {
 
 	return (
 		<>
-			<BGYellow>
+			<SC.AllWorkshopHeader>
 				{error || ''}
 				<Title1>Workshops</Title1>
-			</BGYellow>
-			<StyledMain>{allWorkshopData ? createWorkshopList() : <h1>Loading...</h1>}</StyledMain>
+			</SC.AllWorkshopHeader>
+			<SC.Main>{allWorkshopData ? createWorkshopList() : <h1>Loading...</h1>}</SC.Main>
 		</>
 	);
 }

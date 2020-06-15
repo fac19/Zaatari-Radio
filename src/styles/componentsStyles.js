@@ -1,23 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import * as vars from './variables';
 
-const white = '#F2F2F2';
-// const olive = '#b1b493';
-// const ocean = '#4f8a8b';
-// const night = '#07031a';
-
-const BGYellow = styled.div`
-	position: relative;
-	top: 3.7rem;
-	width: 100%;
-	height: 56px;
-	background: #ffcb74;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
-
-const Title1 = styled.h1`
+export const Title1 = styled.h1`
 	text-transform: uppercase;
 	font-family: DINCondensed;
 	font-style: normal;
@@ -27,7 +12,7 @@ const Title1 = styled.h1`
 	color: #322f2f;
 `;
 
-const NavTitle = styled.h1`
+export const NavTitle = styled.h1`
 	margin: 0 2rem;
 	text-transform: uppercase;
 	font-family: DINCondensed;
@@ -35,10 +20,10 @@ const NavTitle = styled.h1`
 	font-weight: normal;
 	font-size: 30px;
 	line-height: 50px;
-	color: ${white};
+	color: ${vars.offWhite};
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
 	color: inherit;
 	text-decoration: inherit;
 	&:focus,
@@ -49,5 +34,3 @@ const StyledLink = styled(Link)`
 		text-decoration: none;
 	}
 `;
-
-export { BGYellow, Title1, NavTitle, StyledLink };
