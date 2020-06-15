@@ -9,7 +9,6 @@ const SC = {
 		background-color: ${vars.night};
 		color: ${vars.offWhite};
 		font-size: 1em;
-		margin: 1em;
 		height: ${vars.smallButtonHeight};
 		border-style: none;
 		text-transform: uppercase;

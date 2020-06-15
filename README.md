@@ -1,6 +1,6 @@
 # Zaatari-Radio-Frontend
 
-[![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio) 
+[![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
 
 preamble
@@ -12,55 +12,52 @@ How to deploy locally. Need netlify CLI installed
 ## Database schema
 
 ### workshop_authors
-| title | data | 
-| -------- | -------- | 
-| author_id | autonumber  | 
-| name | single-line-text  | 
-| email | email  | 
-| telephone | single-line-text  | 
-| organisation | single-line-text  | 
-| workshops | list of foreign keys (workshop_id)  | 
 
+| title        | data                               |
+| ------------ | ---------------------------------- |
+| author_id    | autonumber                         |
+| name         | single-line-text                   |
+| email        | email                              |
+| telephone    | single-line-text                   |
+| organisation | single-line-text                   |
+| workshops    | list of foreign keys (workshop_id) |
 
 ### workshops
-| title | data-type |
-| -------- | -------- |
-| workshop_id     | autonumber   |
-| workshop_authors | integer foreign-key |
-| title | single-line-text |
-| overview | long-text with RTF |
-| content | long-text with RTF |
-|carousel_pictures | list of attachments |
-|worksheets | list of attachments |
-| feedback | list of text foreign keys |
-| average_rating | integer |
-| duration | single-line-text |
-| date_created | single-line-text |
 
-
+| title             | data-type                 |
+| ----------------- | ------------------------- |
+| workshop_id       | autonumber                |
+| workshop_authors  | integer foreign-key       |
+| title             | single-line-text          |
+| overview          | long-text with RTF        |
+| content           | long-text with RTF        |
+| carousel_pictures | list of attachments       |
+| worksheets        | list of attachments       |
+| feedback          | list of text foreign keys |
+| average_rating    | integer                   |
+| duration          | single-line-text          |
+| date_created      | single-line-text          |
 
 ### feedback
-| title | data | 
-| -------- | -------- | 
-| workshop_id | integer foreign-key  | 
-| content | number  | 
-| number_of_males | number  | 
-| number_of_females | number  | 
-| number_of_non_binary | number  | 
-| number_no_gender_information | number |
-| star_rating | single-line-text  | 
-| comment_rating | long text  | 
-| other_comment | long text  | 
-| name | single-line-text  | 
-| email | email  | 
-| organisation | single-line-text  | 
+
+| title                        | data                |
+| ---------------------------- | ------------------- |
+| workshop_id                  | integer foreign-key |
+| content                      | number              |
+| number_of_males              | number              |
+| number_of_females            | number              |
+| number_of_non_binary         | number              |
+| number_no_gender_information | number              |
+| star_rating                  | single-line-text    |
+| comment_rating               | long text           |
+| other_comment                | long text           |
+| name                         | single-line-text    |
+| email                        | email               |
+| organisation                 | single-line-text    |
 
 ## Contributors
 
-With some nice pictures of each of us. 
-
-
-
+With some nice pictures of each of us.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
