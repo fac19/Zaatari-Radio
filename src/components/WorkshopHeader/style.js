@@ -19,7 +19,9 @@ export const WorkshopTitle = styled.h1`
 	padding: ${vars.titleBarVerticalPadding} 0;
 `;
 
-export const Header = styled.header``;
+export const Header = styled.header`
+	background-color: ${vars.night};
+`;
 
 export const TagSpan = styled.span`
 	max-width: 75%;

@@ -13,7 +13,7 @@ const TagText = styled.p`
 	color: #ffffff;
 	margin-left: 0.5rem;
 	padding: 4px;
-	background: ${vars.night};
+	background: ${vars.granite};
 	border-radius: 10%;
 `;
 
