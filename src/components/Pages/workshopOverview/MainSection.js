@@ -8,7 +8,6 @@ import SecondaryButton from '../../buttons/SecondaryButton';
 const MainWrapper = styled.section`
 	display: flex;
 	flex-direction: column;
-	margin: 4rem 10% 0 10%;
 `;
 
 const ContentDiv = styled.div``;

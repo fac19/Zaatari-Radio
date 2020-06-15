@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import api from '../../../api/api';
 import getFromJSON from './getFromJSON';
@@ -11,10 +12,13 @@ import Comments from './Comments';
 
 import BackButton from '../../buttons/BackButton';
 
+const MainContainer = styled.div`
+	margin: 4rem 10% 0 10%;
+`;
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	// console.log(params);
+
 	useEffect(() => {
 		api
 			.getSpecificWorkshop(params.ID)
@@ -34,7 +38,7 @@ export default function WorkshopOverview({ match: { params } }) {
 	}, [params.ID]);
 
 	return (
-		<>
+		<MainContainer>
 			<Header images={workshop.images} />
 			<Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
 			<Main
@@ -42,10 +46,10 @@ export default function WorkshopOverview({ match: { params } }) {
 		  about Covid 19 and how we can prevent the spread of the virus in Zataari. It is recorded 
 		  in Arabic and has written worksheets download`}
 			/>
-			<Comments />
+			<Comments feedbackArr={workshop.feedback} />
 			<BackButton />
 			{errorState}
-		</>
+		</MainContainer>
 	);
 }
 

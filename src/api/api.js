@@ -10,6 +10,11 @@ const api = {
 		const data = await fetchData('GET', `specific-workshop/?id=${id}`);
 		return data;
 	},
+
+	getSpecificFeedback: async (id) => {
+		const data = await fetchData('GET', `feedback-workshop/?id=${id}`);
+		return data;
+	},
 };
 
 export default api;
