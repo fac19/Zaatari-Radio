@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import vars from '../../styles';
+import * as vars from '../../styles/variables';
 
 export const TitleContainer = styled.div`
 	background: ${vars.sand};
@@ -7,26 +7,28 @@ export const TitleContainer = styled.div`
 `;
 
 export const WorkshopTitle = styled.h1`
-	position: relative;
-	font-family: DIN Condensed;
+	font-family: DINCondensed-Bold;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 45px;
-	line-height: 54px;
 	display: flex;
 	align-items: center;
 	text-transform: uppercase;
 	color: ${vars.night};
 	margin: 0 auto;
-	top: 0.4rem;
+	padding: ${vars.titleBarVerticalPadding} 0;
 `;
 
 export const Header = styled.header``;
 
-export const Tags = styled.span`
+export const TagSpan = styled.span`
 	max-width: 75%;
+	overflow: auto;
+	white-space: nowrap;
+	padding: 0.5rem 0;
 `;
 
-export const Date = styled.span`
+export const DateSpan = styled.span`
 	max-width: 25%;
+	padding: 0.5rem 0;
 `;

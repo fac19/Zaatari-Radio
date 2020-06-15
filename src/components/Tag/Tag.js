@@ -1,23 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-const Container = styled.div`
-	height: 18px;
-	align-items: center;
-	background: #322f2f;
-	padding: 0 1em 0 1em;
-`;
+import * as vars from '../../styles/variables';
 
 const TagText = styled.p`
+	display: inline;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;
 	line-height: 14px;
-	display: flex;
-	align-items: center;
 	color: #ffffff;
+	margin-left: 0.5rem;
+	padding: 4px;
+	background: ${vars.night};
+	border-radius: 10%;
 `;
 
 export default function Tag({ innerText, currentTags, setCurrentTags }) {
@@ -33,11 +30,7 @@ export default function Tag({ innerText, currentTags, setCurrentTags }) {
 		setCurrentTags([...currentTags, innerText]);
 	}
 
-	return (
-		<Container onClick={toggleTags}>
-			<TagText>{innerText}</TagText>
-		</Container>
-	);
+	return <TagText onClick={toggleTags}>{innerText}</TagText>;
 }
 
 Tag.propTypes = {

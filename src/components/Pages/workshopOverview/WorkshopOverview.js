@@ -30,7 +30,7 @@ export default function WorkshopOverview({ match: { params } }) {
 
 	return (
 		<>
-			<WorkshopHeader images={workshop.images} date={workshop.date} tags={workshop.tags} title={workshop.title} />
+			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			{/* <Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} /> */}
 			{errorState}
 		</>

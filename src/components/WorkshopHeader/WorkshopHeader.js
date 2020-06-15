@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TitleBar from './TitleBar';
+import Tag from '../Tag/Tag';
 import * as SC from './style';
 
 export default function WorkshopHeader({ images, date, tags, title }) {
@@ -10,12 +11,26 @@ export default function WorkshopHeader({ images, date, tags, title }) {
 		background: url(${image});
 		background-size: cover;
 		min-height: 20vh;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 0.5rem;
 	`;
 	return (
 		<SC.Header>
 			<ImgDiv>
-				<SC.Date>{date}</SC.Date>
-				<SC.Tags>{tags}</SC.Tags>
+				{date && (
+					<SC.DateSpan>
+						<Tag innerText={date} />
+					</SC.DateSpan>
+				)}
+				{tags && (
+					<SC.TagSpan>
+						{tags.map((tag) => (
+							<Tag innerText={tag} />
+						))}
+					</SC.TagSpan>
+				)}
 			</ImgDiv>
 			<TitleBar title={title} />
 		</SC.Header>
