@@ -7,7 +7,7 @@ export default function getFromJSON(obj) {
 		feedback: fields.feedback,
 		average_rating: fields.average_rating,
 		title: fields.title,
-		workshop_authors: fields.workshop_authors[0],
+		workshop_authors: fields.workshop_authors,
 	};
 	return simpleObj;
 }

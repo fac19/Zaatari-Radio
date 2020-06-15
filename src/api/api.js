@@ -15,6 +15,11 @@ const api = {
 		const data = await fetchData('GET', `feedback-workshop/?id=${id}`);
 		return data;
 	},
+
+	getSpecificAuthor: async (id) => {
+		const data = await fetchData('GET', `authors-workshop/?id=${id}`);
+		return data;
+	},
 };
 
 export default api;
