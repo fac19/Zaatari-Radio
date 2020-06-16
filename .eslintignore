@@ -1,0 +1,7 @@
+cypress/*
+/build/**
+/coverage/*
+/tmp/**
+/tools/internal-rules/node_modules/**
+.storybook/
+!.eslintrc
