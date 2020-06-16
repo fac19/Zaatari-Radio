@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import * as vars from '../../../styles';
+import * as vars from '../../../styles/variables';
 // import vars from '../../../styles';
 import api from '../../../api/api';
 

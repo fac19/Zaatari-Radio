@@ -19,6 +19,7 @@ const MainContainer = styled.div`
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
+	console.log('WorkshopOverview -> workshop', workshop);
 
 	useEffect(() => {
 		api
