@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import Markdown from 'markdown-to-jsx';
+import Markdown from 'markdown-to-jsx';
+
+// import Iframe from 'react-iframe';
 
 import * as SC from './style';
 
@@ -36,8 +38,7 @@ export default function WorkshopContent({ match: { params } }) {
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<SC.MainContainer>
-				{/* <Markdown>{workshop.content}</Markdown> */}
-				<p>{workshop.content}</p>
+				{workshop.content ? <Markdown>{workshop.content}</Markdown> : <h1>loading</h1>}
 				<SC.ButtonsWrapper>
 					<BackButton />
 					<PrimaryButton innerText="DOWNLOAD ALL" />
