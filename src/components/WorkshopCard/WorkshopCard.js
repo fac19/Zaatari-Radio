@@ -5,7 +5,7 @@ import * as SC from './style';
 
 export default function WorkshopCard({ data }) {
 	return (
-		<SC.Article as={Link} to={`/workshop/overview/${data.id}`}>
+		<SC.Article>
 			<SC.Image src={data.fields.carousel_pictures[0].url} />
 			<SC.ButtonContainer>
 				<SC.Button as={Link} to={`/workshop/overview/${data.id}`}>
@@ -13,7 +13,7 @@ export default function WorkshopCard({ data }) {
 				</SC.Button>
 			</SC.ButtonContainer>
 			<SC.WorkshopDetails>
-				<SC.Span>Time: {data.fields.table_of_contents}</SC.Span>
+				<SC.Span>Time: {data.fields.duration}hrs</SC.Span>
 				<SC.Span>Comments: {data.fields.feedback.length}</SC.Span>
 				<SC.Span>Rating: {data.fields.average_rating}</SC.Span>
 			</SC.WorkshopDetails>
@@ -26,7 +26,7 @@ WorkshopCard.propTypes = {
 		id: PropTypes.string,
 		fields: PropTypes.shape({
 			title: PropTypes.string,
-			table_of_contents: PropTypes.string,
+			duration: PropTypes.string,
 			feedback: PropTypes.string,
 			average_rating: PropTypes.string,
 			carousel_pictures: PropTypes.array,
