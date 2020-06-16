@@ -1,24 +1,32 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import api from '../../../api/api';
 import getFromJSON from './getFromJSON';
 
 import Intro from './TitleSection';
-import Header from './header';
+import Main from './MainSection';
+import Comments from './Comments';
 
+import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
+
+import BackButton from '../../buttons/BackButton';
+
+const MainContainer = styled.div`
+	margin: 4rem 10% 0 10%;
+`;
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	console.log(params);
+
 	useEffect(() => {
 		api
 			.getSpecificWorkshop(params.ID)
 			.then((res) => {
 				setWorkshop(getFromJSON(res));
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
 				setErrorState(
 					<h2>
 						<br />
@@ -30,13 +38,14 @@ export default function WorkshopOverview({ match: { params } }) {
 	}, [params.ID]);
 
 	return (
-		<>
-			<Header images={workshop.images} />
-			<Intro title={workshop.title} author={workshop.workshop_authors} equipment={null} />
-
-			{workshop.title || ''}
+		<MainContainer>
+			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
+			<Intro authorArr={workshop.workshop_authors} equipment={null} />
+			<Main content={workshop.overview} />
+			<Comments feedbackArr={workshop.feedback} />
+			<BackButton to="/workshops" />
 			{errorState}
-		</>
+		</MainContainer>
 	);
 }
 
@@ -47,32 +56,3 @@ WorkshopOverview.propTypes = {
 		}),
 	}).isRequired,
 };
-
-/*
-<>
-      Header
-        Image Background
-
-     section
-     Div
-        H1
-     Author
-     Equipment || Null
-
-     section
-        H2
-         P
-     Div
-        Button
-        Button
-
-
-    section
-       H2
-       Article
-          P
-          Div
-             P
-
-</>
-*/

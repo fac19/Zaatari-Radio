@@ -9,7 +9,6 @@ const SC = {
 		background-color: ${vars.olive};
 		color: ${vars.offWhite};
 		font-size: 1em;
-		margin: 1em;
 		height: ${vars.smallButtonHeight};
 		border-style: none;
 		font-family: ${vars.standardFont};

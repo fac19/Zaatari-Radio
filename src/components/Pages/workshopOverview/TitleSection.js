@@ -1,52 +1,81 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import * as vars from '../../../styles';
+// import vars from '../../../styles';
+import api from '../../../api/api';
 
 const Section = styled.section``;
 
-const TitleContainer = styled.div`
-	background: ${vars.sand};
-	display: flex;
-`;
-
-const WorshopTitle = styled.h1`
-	position: relative;
-	font-family: ${vars.headerFont};
+const Author = styled.p`
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: bold;
-	font-size: 45px;
-	line-height: 54px;
+	font-size: 14px;
+	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-transform: uppercase;
-	color: ${vars.night};
-	margin: 0 auto;
-	top: 0.4rem;
+	text-align: right;
 `;
 
-const Author = styled.p``;
+const AuthorSpan = styled.span`
+	margin-left: 0.5rem;
+	font-family: ${vars.standardFont};
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+`;
 
-export default function Intro({ title, author, equipment }) {
+export default function Intro({ authorArr, equipment }) {
+	const [authors, setAuthors] = useState([]);
+	const [errorState, setErrorState] = React.useState('');
+
+	useEffect(() => {
+		if (authorArr) {
+			const newAuthor = authorArr.map((record) => {
+				return api
+					.getSpecificAuthor(record)
+					.then((res) => {
+						console.log(res);
+						return res.fields;
+					})
+					.catch(() => {
+						setErrorState(
+							<h2>
+								<br />
+								<br />
+								Authors couldnt be found
+							</h2>,
+						);
+					});
+			});
+			Promise.all(newAuthor).then((res) => setAuthors(res));
+		}
+	}, [authorArr]);
+
 	return (
 		<Section>
-			<TitleContainer>
-				<WorshopTitle>{title}</WorshopTitle>
-				<Author>From {author}</Author>
-				<Author>{equipment}</Author>
-			</TitleContainer>
+			{authors.map((author) => (
+				<>
+					<Author>
+						From : <AuthorSpan>{author.Name}</AuthorSpan>
+					</Author>
+					<Author>
+						Organisation : <AuthorSpan>{author.organisation}</AuthorSpan>
+					</Author>
+				</>
+			))}
+			<Author>{equipment}</Author>
+			{errorState}
 		</Section>
 	);
 }
 
 Intro.propTypes = {
-	title: PropTypes.string,
-	author: PropTypes.string,
-	equipment: PropTypes.string,
-};
-
-Intro.defaultProps = {
-	title: false,
-	author: false,
-	equipment: false,
+	authorArr: PropTypes.arrayOf(PropTypes.string).isRequired,
+	equipment: PropTypes.string.isRequired,
 };
