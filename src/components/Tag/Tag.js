@@ -5,7 +5,7 @@ import * as vars from '../../styles/variables';
 
 const TagText = styled.p`
 	display: inline;
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;
