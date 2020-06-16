@@ -5,7 +5,7 @@ import * as vars from '../../styles/variables';
 
 const TagText = styled.p`
 	display: inline;
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;
@@ -19,7 +19,7 @@ const TagText = styled.p`
 
 export default function Tag({ innerText, currentTags, setCurrentTags }) {
 	function toggleTags() {
-		if (!(currentTags && setCurrentTags)) {
+		if (!(currentTags && setCurrentTags && innerText)) {
 			return;
 		}
 		if (currentTags.includes(innerText)) {

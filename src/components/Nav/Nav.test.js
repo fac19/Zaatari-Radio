@@ -2,7 +2,7 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
 import Nav from './Nav';
-import App from '../App';
+import App from '../../App';
 
 test('Renders Contact link in nav bar', () => {
 	render(
