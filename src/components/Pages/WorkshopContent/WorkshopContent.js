@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import Markdown from 'markdown-to-jsx';
+import Markdown from 'markdown-to-jsx';
 
 import * as SC from './style';
 
@@ -14,6 +14,8 @@ import api from '../../../api/api';
 export default function WorkshopContent({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
+	console.log('WorkshopContent -> workshop.content', workshop.content);
+	console.log('WorkshopContent -> typeof workshop.content', typeof workshop.content);
 
 	useEffect(() => {
 		api
@@ -36,8 +38,7 @@ export default function WorkshopContent({ match: { params } }) {
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<SC.MainContainer>
-				{/* <Markdown>{workshop.content}</Markdown> */}
-				<p>{workshop.content}</p>
+				{workshop.content ? <Markdown>{workshop.content}</Markdown> : <h1>loading</h1>}
 				<SC.ButtonsWrapper>
 					<BackButton />
 					<PrimaryButton innerText="DOWNLOAD ALL" />
