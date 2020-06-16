@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+// import Markdown from 'markdown-to-jsx';
 
 import * as SC from './style';
 
@@ -36,7 +36,7 @@ export default function WorkshopContent({ match: { params } }) {
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<SC.MainContainer>
-				<h1>CONTENT</h1>
+				{/* <Markdown>{workshop.content}</Markdown> */}
 				<p>{workshop.content}</p>
 				<SC.ButtonsWrapper>
 					<BackButton />
