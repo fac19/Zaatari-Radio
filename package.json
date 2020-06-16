@@ -87,6 +87,7 @@
 		"prettier": "^2.0.5",
 		"pretty-quick": "^2.0.1",
 		"react-axe": "^3.4.1",
+		"storybook-react-router": "^1.0.8",
 		"transparent-commitizen": "^0.2.1"
 	}
 }
