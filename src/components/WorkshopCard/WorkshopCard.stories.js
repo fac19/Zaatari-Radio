@@ -18,14 +18,16 @@ const data = {
 		duration: 4,
 		feedback: ['recvoGLUVrUrhDQ4o', 'recADAnl5iZEOu9bI'],
 		average_rating: 4,
-		title: 'Workshop uno',
+		title: 'Workshop Number 1',
 	},
 };
 
-export const defaultCard = () => {
+export const StandardCard = () => {
 	return (
 		<SC.Main>
 			<WorkshopCard data={data} />
 		</SC.Main>
 	);
 };
+
+// Can add card missing props

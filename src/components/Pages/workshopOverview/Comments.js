@@ -62,7 +62,7 @@ export default function Comments({ feedbackArr }) {
 							<h2>
 								<br />
 								<br />
-								This workshop couldnt be found
+								This workshop could not be found
 							</h2>,
 						);
 					});

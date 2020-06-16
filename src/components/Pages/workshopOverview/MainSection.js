@@ -38,7 +38,7 @@ const ContentText = styled.p`
 
 const ButtonWrapper = styled.div`
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	margin-top: 4rem;
 `;
 
