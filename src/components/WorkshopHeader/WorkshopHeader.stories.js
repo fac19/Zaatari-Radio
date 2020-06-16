@@ -38,3 +38,11 @@ export const workshopHeaderManyTags = () => {
 		/>
 	);
 };
+
+export const workshopHeaderNoImage = () => {
+	return <WorkshopHeader date="01/01/2044" tags={['tag1', 'tag2', 'tag3']} title="Hello world" />;
+};
+
+export const workshopHeaderNoProps = () => {
+	return <WorkshopHeader />;
+};

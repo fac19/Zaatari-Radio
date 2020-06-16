@@ -18,7 +18,7 @@ export default function WorkshopHeader({ images, date, tags, title }) {
 	`;
 	return (
 		<SC.Header>
-			<ImgDiv>
+			<ImgDiv role="img">
 				{date && (
 					<SC.DateSpan>
 						<Tag innerText={date} />
@@ -45,7 +45,7 @@ WorkshopHeader.propTypes = {
 };
 
 WorkshopHeader.defaultProps = {
-	images: false,
+	images: [],
 	date: '',
 	tags: [],
 	title: 'Workshop',
