@@ -13,7 +13,7 @@ exports.handler = function (event, context, callback) {
 		.select({
 			maxRecords: 100,
 			view: 'Grid view',
-			fields: ['title', 'carousel_pictures', 'average_rating', 'feedback'],
+			fields: ['title', 'carousel_pictures', 'average_rating', 'feedback', 'duration'],
 			// TODO: database does not yet support some of the features we'd need, including
 			// tags (many-many) and number
 		})
