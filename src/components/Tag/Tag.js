@@ -19,7 +19,7 @@ const TagText = styled.p`
 
 export default function Tag({ innerText, currentTags, setCurrentTags }) {
 	function toggleTags() {
-		if (!(currentTags && setCurrentTags)) {
+		if (!(currentTags && setCurrentTags && innerText)) {
 			return;
 		}
 		if (currentTags.includes(innerText)) {
