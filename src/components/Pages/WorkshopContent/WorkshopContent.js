@@ -16,8 +16,6 @@ import api from '../../../api/api';
 export default function WorkshopContent({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	console.log('WorkshopContent -> workshop.content', workshop.content);
-	console.log('WorkshopContent -> typeof workshop.content', typeof workshop.content);
 
 	useEffect(() => {
 		api
