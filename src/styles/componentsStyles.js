@@ -4,7 +4,7 @@ import * as vars from './variables';
 
 export const Title1 = styled.h1`
 	text-transform: uppercase;
-	font-family: DINCondensed;
+	font-family: ${vars.headerFont};
 	font-style: normal;
 	font-weight: normal;
 	font-size: 45px;
@@ -15,7 +15,7 @@ export const Title1 = styled.h1`
 export const NavTitle = styled.h1`
 	margin: 0 2rem;
 	text-transform: uppercase;
-	font-family: DINCondensed;
+	font-family: ${vars.headerFont};
 	font-style: normal;
 	font-weight: normal;
 	font-size: 30px;

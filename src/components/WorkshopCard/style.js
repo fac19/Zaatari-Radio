@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as vars from '../../styles/variables';
 
 export const Article = styled.article`
 	margin: 2.5rem 0 0 0;
@@ -15,7 +16,7 @@ export const Image = styled.img`
 `;
 
 export const CardTitle = styled.h2`
-	font-family: DINCondensed;
+	font-family: ${vars.headerFont};
 	font-size: 30px;
 	font-weight: bold;
 	color: black;

@@ -1,4 +1,4 @@
 @font-face {
-	font-family: 'DINCondensed';
-	src: local('DINCondensed-Bold'), url(./fonts/DINCondensed-Bold.ttf) format('ttf');
+	font-family: 'DIN';
+	src: local('DINCondensed-Bold'), url(./fonts/DINCondensed-Bold.ttf) format('truetype');
 }

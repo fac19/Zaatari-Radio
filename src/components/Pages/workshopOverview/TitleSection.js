@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import vars from '../../../styles';
+import * as vars from '../../../styles';
 
 const Section = styled.section``;
 
@@ -12,7 +12,7 @@ const TitleContainer = styled.div`
 
 const WorshopTitle = styled.h1`
 	position: relative;
-	font-family: DIN Condensed;
+	font-family: ${vars.headerFont};
 	font-style: normal;
 	font-weight: bold;
 	font-size: 45px;
