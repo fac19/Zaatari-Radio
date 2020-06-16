@@ -11,7 +11,7 @@ const SC = {
 		font-size: 1em;
 		height: ${vars.medButtonHeight};
 		border-style: none;
-		font-family: Roboto;
+		font-family: ${vars.standardFont};
 		font-style: normal;
 		font-weight: 300;
 		font-size: 21.216px;

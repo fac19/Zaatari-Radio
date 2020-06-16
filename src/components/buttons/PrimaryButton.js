@@ -12,7 +12,7 @@ const SC = {
 		margin: 1em;
 		height: ${vars.smallButtonHeight};
 		border-style: none;
-		font-family: Roboto;
+		font-family: ${vars.standardFont};
 		font-style: normal;
 		font-weight: 400;
 		font-size: 16px;

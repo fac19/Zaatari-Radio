@@ -11,3 +11,4 @@ export const smallButtonHeight = '38px';
 
 // font-families
 export const headerFont = 'DIN, sans-serif';
+export const standardFont = 'Roboto, sans-serif';

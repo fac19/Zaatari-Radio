@@ -25,7 +25,7 @@ export const LanderTitle = styled.h1`
 `;
 
 export const LanderText = styled.p`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: italic;
 	font-weight: normal;
 	font-size: 14px;
@@ -37,7 +37,7 @@ export const LanderText = styled.p`
 `;
 
 export const HowToLink = styled.a`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -75,7 +75,7 @@ export const FaqPair = styled.article`
 
 export const FaqSection = styled.section`
 	background-color: ${vars.offWhite};
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 `;
 
 export const FaqTitle = styled.h2`
@@ -89,7 +89,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 500;
 	font-size: 18px;
@@ -98,7 +98,7 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.p`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;

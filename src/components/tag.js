@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import * as vars from '../styles/variables';
 
 const Container = styled.div`
 	height: 18px;
@@ -10,7 +11,7 @@ const Container = styled.div`
 `;
 
 const TagText = styled.p`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;

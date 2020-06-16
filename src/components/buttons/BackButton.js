@@ -14,7 +14,7 @@ const SC = {
 		border-style: none;
 		text-transform: uppercase;
 
-		font-family: Roboto;
+		font-family: ${vars.standardFont};
 		font-style: normal;
 		font-weight: 300;
 		font-size: 16px;

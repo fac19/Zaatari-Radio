@@ -46,5 +46,5 @@ export const WorkshopDetails = styled.div`
 export const Span = styled.span`
 	width: 33%;
 	text-align: left;
-	font-family: roboto;
+	font-family: ${vars.standardFont};
 `;
