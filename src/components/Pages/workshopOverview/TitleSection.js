@@ -1,34 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import * as vars from '../../../styles';
-// import vars from '../../../styles';
 import api from '../../../api/api';
 
-const Section = styled.section``;
-
-const Author = styled.p`
-	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: bold;
-	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
-	text-align: right;
-`;
-
-const AuthorSpan = styled.span`
-	margin-left: 0.5rem;
-	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
-	text-align: right;
-`;
+import * as SC from './style';
 
 export default function Intro({ authorArr, equipment }) {
 	const [authors, setAuthors] = useState([]);
@@ -57,20 +31,20 @@ export default function Intro({ authorArr, equipment }) {
 	}, [authorArr]);
 
 	return (
-		<Section>
+		<SC.Section>
 			{authors.map((author) => (
 				<>
-					<Author>
-						From : <AuthorSpan>{author.Name}</AuthorSpan>
-					</Author>
-					<Author>
-						Organisation : <AuthorSpan>{author.organisation}</AuthorSpan>
-					</Author>
+					<SC.Author>
+						From : <SC.AuthorSpan>{author.Name}</SC.AuthorSpan>
+					</SC.Author>
+					<SC.Author>
+						Organisation : <SC.AuthorSpan>{author.organisation}</SC.AuthorSpan>
+					</SC.Author>
 				</>
 			))}
-			<Author>{equipment}</Author>
+			<SC.Author>{equipment}</SC.Author>
 			{errorState}
-		</Section>
+		</SC.Section>
 	);
 }
 
