@@ -1,5 +1,7 @@
 {
-	"extends": ["react-app", "airbnb", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
+	"extends": ["react-app", "airbnb", "plugin:jsx-a11y/recommended", "prettier", "prettier/react", "plugin:cypress/recommended",
+		"plugin:chai-friendly/recommended"],
+	
 	"rules": {
 		"prefer-promise-reject-errors": "off",
 		"max-len": [
