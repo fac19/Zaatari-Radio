@@ -40,7 +40,6 @@ export default function Intro({ authorArr, equipment }) {
 				return api
 					.getSpecificAuthor(record)
 					.then((res) => {
-						console.log(res);
 						return res.fields;
 					})
 					.catch(() => {

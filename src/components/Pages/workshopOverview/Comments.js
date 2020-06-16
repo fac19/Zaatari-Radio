@@ -57,8 +57,7 @@ export default function Comments({ feedbackArr }) {
 					.then((res) => {
 						return res.fields;
 					})
-					.catch((err) => {
-						console.log(err);
+					.catch(() => {
 						setErrorState(
 							<h2>
 								<br />
