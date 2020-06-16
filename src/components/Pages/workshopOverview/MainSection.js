@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 import PrimaryButton from '../../buttons/PrimaryButton';
 import SecondaryButton from '../../buttons/SecondaryButton';
 
@@ -40,15 +42,15 @@ const ButtonWrapper = styled.div`
 	margin-top: 4rem;
 `;
 
-export default function Main({ content }) {
+export default function Main({ overview, id }) {
 	return (
 		<MainWrapper>
 			<ContentDiv>
 				<Title>Overview</Title>
-				<ContentText>{content}</ContentText>
+				<ContentText>{overview}</ContentText>
 			</ContentDiv>
 			<ButtonWrapper>
-				<PrimaryButton innerText="Workshop" />
+				<PrimaryButton as={Link} to={`/workshop/content/${id}`} innerText="Workshop" />
 				<SecondaryButton innerText="Submit Feedback" />
 			</ButtonWrapper>
 		</MainWrapper>
@@ -56,5 +58,6 @@ export default function Main({ content }) {
 }
 
 Main.propTypes = {
-	content: PropTypes.string.isRequired,
+	overview: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
 };

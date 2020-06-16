@@ -7,3 +7,4 @@ export const offWhite = '#fbf9fa';
 export const medButtonHeight = '42px';
 export const smallButtonHeight = '38px';
 export const titleBarVerticalPadding = '8px';
+export const mainContainerWidth = '700px';
