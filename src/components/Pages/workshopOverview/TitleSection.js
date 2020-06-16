@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import * as vars from '../../../styles';
 // import vars from '../../../styles';
 import api from '../../../api/api';
 
 const Section = styled.section``;
 
 const Author = styled.p`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: bold;
 	font-size: 14px;
@@ -19,7 +20,7 @@ const Author = styled.p`
 
 const AuthorSpan = styled.span`
 	margin-left: 0.5rem;
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
@@ -41,8 +42,7 @@ export default function Intro({ authorArr, equipment }) {
 					.then((res) => {
 						return res.fields;
 					})
-					.catch((err) => {
-						console.log(err);
+					.catch(() => {
 						setErrorState(
 							<h2>
 								<br />

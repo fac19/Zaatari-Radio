@@ -6,14 +6,13 @@ var base = new Airtable({ apiKey }).base(apiBaseId);
 
 exports.handler = function (event, context, callback) {
 	const ID = event.queryStringParameters.id;
-	console.log('exports.handler -> ID', ID);
+	// console.log('exports.handler -> ID', ID);
 
 	base('workshop_authors').find(ID, function (err, record) {
 		if (err) {
 			callback(err);
 		} else {
 			const body = JSON.stringify(record);
-			console.log(body);
 			const response = {
 				statusCode: 200,
 				body: body,
