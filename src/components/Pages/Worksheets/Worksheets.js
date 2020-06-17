@@ -34,7 +34,7 @@ export default function Worksheets({ match: { params } }) {
 	return (
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
-			<BackButton />
+			<BackButton to={`/workshop/content/${params.ID}`} />
 			<SC.PageTitle>Worksheets</SC.PageTitle>
 			{worksheets.map((worksheet) => (
 				<DownloadLink url={worksheet.url} innerText={worksheet.filename} />
