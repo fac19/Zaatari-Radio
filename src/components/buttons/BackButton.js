@@ -22,6 +22,8 @@ const SC = {
 		display: flex;
 		align-items: center;
 		text-align: center;
+
+		cursor: pointer;
 	`,
 };
 
