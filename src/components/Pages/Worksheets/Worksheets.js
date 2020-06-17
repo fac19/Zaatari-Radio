@@ -23,7 +23,7 @@ export default function Worksheets({ match: { params } }) {
 	const worksheets = workshop.worksheets || [];
 	return (
 		<>
-			<WorkshopHeader />
+			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<BackButton />
 			<h2>Worksheets</h2>
 			{worksheets.map((worksheet) => (
