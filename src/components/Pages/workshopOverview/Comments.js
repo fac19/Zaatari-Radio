@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import api from '../../../api/api';
 
+import CommentListItem from './CommentsList';
 import * as SC from './style';
 
 export default function Comments({ feedbackArr }) {
@@ -30,15 +31,14 @@ export default function Comments({ feedbackArr }) {
 		}
 	}, [feedbackArr]);
 
+	function CreateCommentsList(feedbackNewArray) {
+		return feedbackNewArray.map((commentObj) => <CommentListItem commentObj={commentObj} />);
+	}
+
 	return (
 		<SC.CommentsWrapper>
 			<SC.CommentsTitle>Comments</SC.CommentsTitle>
-			{feedback.map((commentObj) => (
-				<>
-					<SC.CommentAuthor>{commentObj.name}</SC.CommentAuthor>
-					<SC.CommentsText>{commentObj.Content}</SC.CommentsText>
-				</>
-			))}
+			{CreateCommentsList(feedback)}
 			{errorState}
 		</SC.CommentsWrapper>
 	);
