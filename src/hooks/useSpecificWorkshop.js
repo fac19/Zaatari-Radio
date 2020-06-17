@@ -3,7 +3,6 @@ import api from '../api/api';
 import getFromJSON from '../utils/getFromJSON';
 
 export default function useSpecificWorkshop(id, setWorkshop, setErrorState) {
-	console.log('hooky');
 	useEffect(() => {
 		api
 			.getSpecificWorkshop(id)
