@@ -5,7 +5,6 @@ import Home from './components/Pages/Home/Home';
 import Nav from './components/Nav/Nav';
 import AllWorkshops from './components/Pages/AllWorkshops/AllWorkshops';
 import WorkshopOverview from './components/Pages/workshopOverview/WorkshopOverview';
-// import WorkshopFeedback from './components/Pages/WorkshopFeedback';
 // import WorkshopWorksheet from './components/Pages/WorkshopWorksheet';
 import WorkshopContent from './components/Pages/WorkshopContent/WorkshopContent';
 import Feedback from './components/Pages/Feedback/Feedback';
@@ -26,10 +25,9 @@ function App() {
 							</Route>
 							<Route exact path="/workshops" component={AllWorkshops} />
 							<Route exact path="/workshop/overview/:ID" component={WorkshopOverview} />
-							{/* <Route exact path="/workshop/feedback/:ID" component={WorkshopFeedback} /> */}
 							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
 							{/* <Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} /> */}
-							<Route exact path="/workshop/feedback" component={Feedback} />
+							<Route exact path="/workshop/feedback/:ID" component={Feedback} />
 						</Switch>
 					</main>
 				</div>
