@@ -13,8 +13,8 @@ export default function WorkshopCard({ data }) {
 				</SC.Button>
 			</SC.ButtonContainer>
 			<SC.WorkshopDetails>
-				<SC.Span>Time: {data.fields.duration}hrs</SC.Span>
-				<SC.Span>Comments: {data.fields.feedback.length}</SC.Span>
+				<SC.Span>Duration: {data.fields.duration}hrs</SC.Span>
+				<SC.Span>Feedback: {data.fields.feedback.length}</SC.Span>
 				<SC.Span>Rating: {data.fields.average_rating}</SC.Span>
 			</SC.WorkshopDetails>
 		</SC.Article>
