@@ -4,6 +4,7 @@ import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
 import BackButton from '../../buttons/BackButton';
 import dummyData from './dummyData';
 import StyledLink from './style';
+import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
 const downloadAll = (links) => {
 	links.forEach((link) => {
@@ -16,13 +17,17 @@ function DownloadLink({ url, innerText }) {
 }
 
 export default function Worksheets({ match: { params } }) {
-	console.log(params);
+	const [, setErrorState] = React.useState('');
+	const [workshop, setWorkshop] = React.useState({});
+	useSpecificWorkshop(params.ID, setWorkshop, setErrorState);
+
+	const worksheets = workshop.worksheets || [];
 	return (
 		<>
 			<WorkshopHeader />
 			<BackButton />
 			<h2>Worksheets</h2>
-			{dummyData.map((worksheet) => (
+			{worksheets.map((worksheet) => (
 				<DownloadLink url={worksheet.url} innerText={worksheet.filename} />
 			))}
 			<StyledLink onClick={() => downloadAll(dummyData)}>Download all</StyledLink>

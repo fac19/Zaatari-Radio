@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import api from '../../../api/api';
-import getFromJSON from '../../../utils/getFromJSON';
+import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
 import * as SC from './style';
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
@@ -14,24 +13,7 @@ import BackButton from '../../buttons/BackButton';
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
-	console.log('WorkshopOverview -> workshop', workshop);
-
-	useEffect(() => {
-		api
-			.getSpecificWorkshop(params.ID)
-			.then((res) => {
-				setWorkshop(getFromJSON(res));
-			})
-			.catch(() => {
-				setErrorState(
-					<h2>
-						<br />
-						<br />
-						This workshop couldnt be found
-					</h2>,
-				);
-			});
-	}, [params.ID]);
+	useSpecificWorkshop(params.ID, setWorkshop, setErrorState);
 
 	return (
 		<>
