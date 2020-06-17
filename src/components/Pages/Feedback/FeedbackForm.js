@@ -10,8 +10,8 @@ const StyledForm = styled.form`
 	margin-top: 8rem;
 `;
 
-export default function FeedbackForm({ match: { params } }) {
-	console.log(params.ID); // to send with the api request
+export default function FeedbackForm({ id }) {
+	console.log(id); // to send with the api request
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		console.log('data', data);
@@ -71,9 +71,5 @@ export default function FeedbackForm({ match: { params } }) {
 }
 
 FeedbackForm.propTypes = {
-	match: PropTypes.shape({
-		params: PropTypes.shape({
-			ID: PropTypes.string,
-		}),
-	}).isRequired,
+	id: PropTypes.string.isRequired,
 };
