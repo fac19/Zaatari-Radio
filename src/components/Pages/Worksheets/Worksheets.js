@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
 import BackButton from '../../buttons/BackButton';
-import dummyData from './dummyData';
 import StyledLink from './style';
 import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
@@ -30,7 +29,7 @@ export default function Worksheets({ match: { params } }) {
 			{worksheets.map((worksheet) => (
 				<DownloadLink url={worksheet.url} innerText={worksheet.filename} />
 			))}
-			<StyledLink onClick={() => downloadAll(dummyData)}>Download all</StyledLink>
+			<StyledLink onClick={() => downloadAll(worksheets)}>Download all</StyledLink>
 		</>
 	);
 }
