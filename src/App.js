@@ -8,6 +8,7 @@ import WorkshopOverview from './components/Pages/workshopOverview/WorkshopOvervi
 // import WorkshopFeedback from './components/Pages/WorkshopFeedback';
 // import WorkshopWorksheet from './components/Pages/WorkshopWorksheet';
 import WorkshopContent from './components/Pages/WorkshopContent/WorkshopContent';
+import Worksheets from './components/Pages/Worksheets/Worksheets';
 import Feedback from './components/Pages/Feedback/Feedback';
 
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
 							{/* <Route exact path="/workshop/feedback/:ID" component={WorkshopFeedback} /> */}
 							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
 							{/* <Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} /> */}
+							<Route exact path="/workshop/worksheets/:ID" component={Worksheets} />
 							<Route exact path="/workshop/feedback" component={Feedback} />
 						</Switch>
 					</main>
