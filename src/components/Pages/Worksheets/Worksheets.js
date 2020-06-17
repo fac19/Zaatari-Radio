@@ -26,20 +26,21 @@ function DownloadLink({ url, innerText, fn }) {
 }
 
 export default function Worksheets({ match: { params } }) {
-	const [, setErrorState] = React.useState('');
+	const [errorState, setErrorState] = React.useState('');
 	const [workshop, setWorkshop] = React.useState({});
 	useSpecificWorkshop(params.ID, setWorkshop, setErrorState);
 
 	const worksheets = workshop.worksheets || [];
+	const content = [
+		worksheets.map((worksheet) => <DownloadLink url={worksheet.url} innerText={worksheet.filename} />),
+		<DownloadLink fn={() => downloadAll(worksheets)} innerText="Download all" />,
+	];
 	return (
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<BackButton to={`/workshop/content/${params.ID}`} />
 			<SC.PageTitle>Worksheets</SC.PageTitle>
-			{worksheets.map((worksheet) => (
-				<DownloadLink url={worksheet.url} innerText={worksheet.filename} />
-			))}
-			<DownloadLink fn={() => downloadAll(worksheets)} innerText="Download all" />
+			{errorState || content}
 		</>
 	);
 }
