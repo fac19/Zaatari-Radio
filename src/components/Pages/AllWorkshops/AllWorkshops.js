@@ -29,7 +29,7 @@ export default function AllWorkshops() {
 		<>
 			<SC.AllWorkshopHeader>
 				{error || ''}
-				<Title1>Workshops</Title1>
+				<Title1>All Workshops</Title1>
 			</SC.AllWorkshopHeader>
 			<SC.Main>{allWorkshopData ? createWorkshopList() : <h1>Loading...</h1>}</SC.Main>
 		</>

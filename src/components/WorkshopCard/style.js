@@ -3,11 +3,10 @@ import * as vars from '../../styles/variables';
 
 export const Article = styled.article`
 	margin: 2.5rem 0 0 0;
-	width: 80vw;
-	max-width: 40rem;
+	max-width: ${vars.cardWidth};
 	background: whitesmoke;
 	border-radius: 1%;
-	box-shadow: 5px 5px 5px 5px hsla(289, 32%, 47%, 0.72);
+	box-shadow: 5px 5px 5px 5px hsla(0, 10%, 10%, 0.3);
 `;
 
 export const Image = styled.img`

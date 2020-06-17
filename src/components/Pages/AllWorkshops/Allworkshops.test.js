@@ -5,5 +5,5 @@ import AllWorkshops from './AllWorkshops';
 
 test('Renders Workshops Page', () => {
 	render(<AllWorkshops />);
-	screen.getByText('Workshops');
+	screen.getByText('All Workshops');
 });
