@@ -4,9 +4,9 @@ import FeedbackForm from './FeedbackForm';
 
 export default function Feedback({ match: { params } }) {
 	return (
-		<main>
+		<section>
 			<FeedbackForm ID={params.ID} />
-		</main>
+		</section>
 	);
 }
 
