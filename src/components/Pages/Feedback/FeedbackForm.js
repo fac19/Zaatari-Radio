@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import api from '../../../api/api';
 
 const StyledForm = styled.form`
 	display: flex;
@@ -9,9 +12,16 @@ const StyledForm = styled.form`
 	margin-top: 8rem;
 `;
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ match: { params } }) {
 	const { register, handleSubmit, errors } = useForm();
+
 	const onSubmit = (data) => {
+		// How does airtable want the ID to be provided?
+		api
+			.submitFeedback(params.ID, [{ fields: data }])
+			.then()
+			.catch();
+
 		console.log('data', data);
 		/* data looks like: 
       {
@@ -59,7 +69,7 @@ export default function FeedbackForm() {
 					<textarea id="studentFeedback" name="studentFeedback" ref={register} />
 				</label>
 				<label htmlFor="additionalComments">
-					Additional Comments
+					Public Comment
 					<textarea id="additionalComments" name="comments" ref={register} />
 				</label>
 				<input type="submit" />
@@ -67,3 +77,11 @@ export default function FeedbackForm() {
 		</>
 	);
 }
+
+FeedbackForm.propTypes = {
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			ID: PropTypes.string,
+		}),
+	}).isRequired,
+};

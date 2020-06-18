@@ -15,9 +15,12 @@ const api = {
 		const data = await fetchData('GET', `feedback-workshop/?id=${id}`);
 		return data;
 	},
-
 	getSpecificAuthor: async (id) => {
 		const data = await fetchData('GET', `authors-workshop/?id=${id}`);
+		return data;
+	},
+	submitFeedback: async (id, feedback) => {
+		const data = await fetchData('POST', `submit-feedback/?id=${id}`, feedback);
 		return data;
 	},
 };
