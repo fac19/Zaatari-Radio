@@ -6,13 +6,15 @@ import * as vars from '../../../styles/variables';
 export const HomeContainer = styled.div`
 	padding: 0 ${vars.homeHorizontalPadding};
 `;
+// margin: 0 auto;
+// max-width: 55rem;
 
 // LanderSection Syles
 export const LanderHeader = styled.header`
-	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
+	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
 `;
 
 export const LanderTitle = styled.h1`
@@ -56,7 +58,13 @@ export const Icon = () => (
 );
 
 // Shared Styles
-export const Section = styled.section``;
+export const Section = styled.section`
+	padding-top: 2rem;
+	margin: 0 15%;
+	@media only screen and (max-width: 600px) {
+		margin: 0 0.3rem;
+	}
+`;
 
 export const Title = styled.h2`
 	font-family: ${vars.standardFont};

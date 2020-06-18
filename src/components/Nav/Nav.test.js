@@ -28,5 +28,5 @@ test('Renders workshops link in nav bar', () => {
 			<Nav />
 		</App>,
 	);
-	screen.getAllByText('View Workshops');
+	screen.getAllByText('Find Workshops');
 });
