@@ -9,9 +9,9 @@ export default function NavBar() {
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="#features">Home</Nav.Link>
-					<Nav.Link href="#pricing">Find Workshops</Nav.Link>
-					<Nav.Link href="#pricing">Contact</Nav.Link>
+					<Nav.Link href="/">Home</Nav.Link>
+					<Nav.Link href="/workshops">Find Workshops</Nav.Link>
+					<Nav.Link href="/contact">Contact</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
