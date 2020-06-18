@@ -14,7 +14,7 @@ export default function Main({ overview, id }) {
 				<SC.ContentText>{overview}</SC.ContentText>
 			</SC.ContentDiv>
 			<SC.ButtonWrapper>
-				<PrimaryButton as={Link} to={`/workshop/content/${id}`} innerText="Workshop" />
+				<PrimaryButton as={Link} to={`/workshop/content/${id}`} innerText="Go to Workshop" />
 				<SecondaryButton as={Link} to={`/workshop/feedback/${id}`} innerText="Submit Feedback" />
 			</SC.ButtonWrapper>
 		</SC.MainWrapper>

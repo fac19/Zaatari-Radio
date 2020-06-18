@@ -23,6 +23,7 @@ const SC = {
 		left: 0px;
 
 		&:hover {
+			background: #78788c;
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 			position: relative;
 			top: -2px;

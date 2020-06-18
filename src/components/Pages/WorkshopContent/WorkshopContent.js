@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 
-// import Iframe from 'react-iframe';
-
 import * as SC from './style';
 
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';

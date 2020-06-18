@@ -5,10 +5,10 @@ import * as SC from '../style';
 
 function FAQ({ q, a }) {
 	return (
-		<article>
-			<SC.Text>Q: {q}</SC.Text>
-			<SC.Text>A: {a}</SC.Text>
-		</article>
+		<SC.FaqArticle>
+			<SC.FaqTextHover>Q: {q}</SC.FaqTextHover>
+			<SC.FaqTextHover>A: {a}</SC.FaqTextHover>
+		</SC.FaqArticle>
 	);
 }
 

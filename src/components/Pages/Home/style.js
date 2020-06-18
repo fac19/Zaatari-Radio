@@ -6,8 +6,6 @@ import * as vars from '../../../styles/variables';
 export const HomeContainer = styled.div`
 	padding: 0 ${vars.homeHorizontalPadding};
 `;
-// margin: 0 auto;
-// max-width: 55rem;
 
 // LanderSection Syles
 export const LanderHeader = styled.header`
@@ -79,4 +77,16 @@ export const Text = styled.p`
 	align-items: center;
 	text-align: justify;
 	color: ${vars.night};
+`;
+
+export const FaqArticle = styled.article`
+	margin-bottom: 1rem;
+`;
+
+export const FaqTextHover = styled.p`
+	margin: 0;
+	&:hover {
+		color: ${vars.olive};
+		font-weight: 800;
+	}
 `;
