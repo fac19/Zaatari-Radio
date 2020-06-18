@@ -20,6 +20,7 @@ export const standardFont = 'Roboto, sans-serif';
 
 // Font sizes
 export const DinHeaderBig = '45px';
-export const smallP = '12px';
-export const medP = '14px';
-export const largeP = '16px';
+export const smallP = '14px';
+export const medP = '16px';
+export const largeP = '18px';
+export const subtitle = '20px';

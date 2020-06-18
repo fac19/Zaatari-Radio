@@ -5,5 +5,5 @@ import Home from './Home';
 
 test('Renders Home Page', () => {
 	render(<Home />);
-	screen.getByText('Zaatari Radio');
+	screen.getByText('HumaniBase');
 });
