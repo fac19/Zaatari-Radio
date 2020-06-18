@@ -5,16 +5,16 @@ import * as SC from './style';
 
 function FAQ({ q, a }) {
 	return (
-		<SC.FaqPair>
-			<p>Q: {q}</p>
-			<p>A: {a}</p>
-		</SC.FaqPair>
+		<article>
+			<SC.Text>Q: {q}</SC.Text>
+			<SC.Text>A: {a}</SC.Text>
+		</article>
 	);
 }
 
 export default function FAQs() {
 	return (
-		<SC.FaqSection>
+		<SC.Section>
 			<SC.Title>FAQs</SC.Title>
 			<FAQ q="How do I access workshops?" a="Navigate to the workshop tab and browse away. Use the filters to find the project that suitsyou best!" />
 			<FAQ
@@ -25,7 +25,7 @@ export default function FAQs() {
 				q="How can I contact other organisations?"
 				a="Once a member, you will be able to access the profile of other members who havecontributed to the database. Ask specific questions about projects, open conversations andstart collaborating."
 			/>
-		</SC.FaqSection>
+		</SC.Section>
 	);
 }
 

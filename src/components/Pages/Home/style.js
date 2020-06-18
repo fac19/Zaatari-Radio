@@ -9,7 +9,7 @@ export const HomeContainer = styled.div`
 
 // LanderSection Syles
 export const LanderHeader = styled.header`
-	padding: 0 ${vars.homeHorizontalPadding};
+	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
@@ -27,18 +27,15 @@ export const LanderTitle = styled.h1`
 export const LanderText = styled.p`
 	font-family: ${vars.standardFont};
 	font-style: italic;
-	font-weight: normal;
-	font-size: 14px;
+	font-size: ${vars.medP};
 	color: ${vars.night};
 `;
 
 export const LanderLink = styled.a`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	text-transform: uppercase;
+	font-size: ${vars.subtitle};
 	color: ${vars.night};
+	text-transform: uppercase;
 `;
 
 export const Icon = () => (
@@ -58,45 +55,20 @@ export const Icon = () => (
 	</svg>
 );
 
-// FaqSection styles
-export const FaqPair = styled.article`
-	max-width: 500px;
-	font-family: ${vars.standardFont};
-`;
-
-export const FaqSection = styled.section`
-	font-family: ${vars.standardFont};
-`;
-
 // Shared Styles
 export const Section = styled.section``;
 
 export const Title = styled.h2`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 21px;
+	font-size: ${vars.subtitle};
 	color: ${vars.night};
 `;
 
 export const Text = styled.p`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: ${vars.medP}
 	display: flex;
 	align-items: center;
 	text-align: justify;
 	color: ${vars.night};
-`;
-
-export const BoldText = styled(Text)`
-	font-weight: bold;
-`;
-
-export const ImageStrip = styled.div`
-	display: flex;
-	justify-content: center;
 `;
