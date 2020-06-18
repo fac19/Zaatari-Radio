@@ -7,6 +7,7 @@ import AllWorkshops from './components/Pages/AllWorkshops/AllWorkshops';
 import WorkshopOverview from './components/Pages/workshopOverview/WorkshopOverview';
 // import WorkshopWorksheet from './components/Pages/WorkshopWorksheet';
 import WorkshopContent from './components/Pages/WorkshopContent/WorkshopContent';
+import Worksheets from './components/Pages/Worksheets/Worksheets';
 import Feedback from './components/Pages/Feedback/Feedback';
 
 import './App.css';
@@ -28,6 +29,7 @@ function App() {
 							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
 							{/* <Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} /> */}
 							<Route exact path="/workshop/feedback/:ID" component={Feedback} />
+							<Route exact path="/workshop/worksheets/:ID" component={Worksheets} />
 						</Switch>
 					</main>
 				</div>

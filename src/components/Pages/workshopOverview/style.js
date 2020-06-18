@@ -2,38 +2,32 @@ import styled from 'styled-components';
 import * as vars from '../../../styles/variables';
 
 // WorkshopOverview Styles
-export const MainContainer = styled.div`
-	margin: 4rem 10% 0 10%;
+export const MainContainer = styled.main`
+	margin: 4rem 8rem 0 12rem;
 	max-width: ${vars.mainContainerWidth};
 `;
 
-// Title Section Styles
-export const Section = styled.section``;
-
-export const Author = styled.p`
-	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: bold;
-	font-size: 14px;
-	line-height: 16px;
+// Intro Section Styles
+export const Section = styled.section`
 	display: flex;
-	align-items: center;
-	text-align: right;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+`;
+
+export const AuthorText = styled.p`
+	font-family: ${vars.standardFont};
+	font-weight: bold;
+	font-size: ${vars.smallP};
+	margin: 0.25rem 0;
 `;
 
 export const AuthorSpan = styled.span`
 	margin-left: 0.5rem;
-	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
-	text-align: right;
+	font-weight: normal;
 `;
 
-// Main Section Styles
+// Overview Section Styles
 
 export const MainWrapper = styled.section`
 	display: flex;
@@ -43,7 +37,7 @@ export const MainWrapper = styled.section`
 export const ContentDiv = styled.div``;
 
 export const Title = styled.h1`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: bold;
 	font-size: 23.43px;
@@ -54,7 +48,7 @@ export const Title = styled.h1`
 `;
 
 export const ContentText = styled.p`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 16px;
@@ -70,14 +64,14 @@ export const ButtonWrapper = styled.div`
 	margin-top: 4rem;
 `;
 
-// Comments Styles
+// Feedback Section Styles
 export const CommentsWrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 `;
 
 export const CommentsTitle = styled.h2`
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: bold;
 	font-size: 23.43px;
@@ -90,7 +84,7 @@ export const CommentsTitle = styled.h2`
 export const CommentAuthor = styled.h3`
 	margin: 0;
 	padding-left: 1rem;
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: italic;
 	font-weight: 400;
 	font-size: 20px;
@@ -101,7 +95,7 @@ export const CommentAuthor = styled.h3`
 
 export const CommentsText = styled.p`
 	margin: 0.5rem 0 2rem 0;
-	font-family: Roboto;
+	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;

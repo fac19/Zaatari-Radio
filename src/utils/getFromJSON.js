@@ -9,6 +9,7 @@ export default function getFromJSON(obj) {
 		title: fields.title,
 		workshop_authors: fields.workshop_authors,
 		date_created: fields.date_created,
+		worksheets: fields.worksheets,
 	};
 	return simpleObj;
 }

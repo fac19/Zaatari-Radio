@@ -16,3 +16,9 @@ export const cardWidth = '40rem';
 // font-families
 export const headerFont = 'DIN, sans-serif';
 export const standardFont = 'Roboto, sans-serif';
+
+// Font sizes
+export const DinHeaderBig = '45px';
+export const smallP = '12px';
+export const medP = '14px';
+export const largeP = '16px';
