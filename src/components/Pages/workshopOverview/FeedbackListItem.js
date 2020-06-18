@@ -7,7 +7,7 @@ export default function FeedbackListItem({ commentObj }) {
 	return (
 		<>
 			<SC.CommentAuthor>{commentObj.name}</SC.CommentAuthor>
-			<SC.CommentsText>{commentObj.Content}</SC.CommentsText>
+			<SC.CommentsText>{commentObj.public_comment}</SC.CommentsText>
 		</>
 	);
 }
@@ -15,6 +15,6 @@ export default function FeedbackListItem({ commentObj }) {
 FeedbackListItem.propTypes = {
 	commentObj: PropTypes.shape({
 		name: PropTypes.string,
-		Content: PropTypes.string,
+		public_comment: PropTypes.string,
 	}).isRequired,
 };

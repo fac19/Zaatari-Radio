@@ -37,6 +37,7 @@ export const WorkshopTitle = styled.h1`
 	font-family: ${vars.headerFont};
 	font-size: ${vars.DinHeaderBig};
 	margin: 0;
+	text-align: center;
 	padding: ${vars.titleBarVerticalPadding} 0;
 	text-transform: uppercase;
 	color: ${vars.night};

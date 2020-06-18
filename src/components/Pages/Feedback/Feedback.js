@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import FeedbackForm from './FeedbackForm';
 
 export default function Feedback({ match: { params } }) {
 	return (
-		<main>
-			<FeedbackForm id={params.ID} />
-		</main>
+		<section>
+			<FeedbackForm ID={params.ID} />
+		</section>
 	);
 }
 
