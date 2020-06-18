@@ -7,15 +7,13 @@ import * as SC from './style';
 
 export default function WorkshopHeader({ images, date, tags, title }) {
 	const image = images ? images[0]?.url : '';
-	const ImgDiv = styled.div`
+	// Do not know how to pass the image as prop into styled component
+	// So have extended the styled component below and add bg image
+	const ImgDiv = styled(SC.ImgDiv)`
 		background: url(${image});
 		background-size: cover;
-		min-height: 20vh;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		padding: 0.5rem;
 	`;
+
 	return (
 		<SC.Header>
 			<ImgDiv role="img">

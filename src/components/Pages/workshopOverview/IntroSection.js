@@ -34,15 +34,15 @@ export default function Intro({ authorArr, equipment }) {
 		<SC.Section>
 			{authors.map((author) => (
 				<>
-					<SC.Author>
+					<SC.AuthorText>
 						From : <SC.AuthorSpan>{author.Name}</SC.AuthorSpan>
-					</SC.Author>
-					<SC.Author>
+					</SC.AuthorText>
+					<SC.AuthorText>
 						Organisation : <SC.AuthorSpan>{author.organisation}</SC.AuthorSpan>
-					</SC.Author>
+					</SC.AuthorText>
 				</>
 			))}
-			<SC.Author>{equipment}</SC.Author>
+			<SC.AuthorText>{equipment}</SC.AuthorText>
 			{errorState}
 		</SC.Section>
 	);

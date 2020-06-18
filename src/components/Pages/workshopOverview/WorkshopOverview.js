@@ -5,13 +5,13 @@ import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
 import * as SC from './style';
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
-import Intro from './TitleSection';
-import Main from './MainSection';
-import Comments from './Comments';
+import IntroSection from './IntroSection';
+import OverviewSection from './OverviewSection';
+import FeedbackSection from './FeedbackSection';
 import BackButton from '../../buttons/BackButton';
 
 export default function WorkshopOverview({ match: { params } }) {
-	const [errorState, setErrorState] = React.useState('');
+	const [errorState, setErrorState] = React.useState(null);
 	const [workshop, setWorkshop] = React.useState({});
 	useSpecificWorkshop(params.ID, setWorkshop, setErrorState);
 
@@ -19,12 +19,16 @@ export default function WorkshopOverview({ match: { params } }) {
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
 			<SC.MainContainer>
-				<Intro authorArr={workshop.workshop_authors} equipment={null} />
-				<Main overview={workshop.overview} id={params.ID} />
-				<Comments feedbackArr={workshop.feedback} />
+				{errorState ? (
+					<SC.Title>{errorState}</SC.Title>
+				) : (
+					<>
+						<IntroSection authorArr={workshop.workshop_authors} equipment={null} />
+						<OverviewSection overview={workshop.overview} id={params.ID} />
+						<FeedbackSection feedbackArr={workshop.feedback} />
+					</>
+				)}
 				<BackButton to="/workshops" />
-
-				{errorState}
 			</SC.MainContainer>
 		</>
 	);

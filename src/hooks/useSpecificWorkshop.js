@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import api from '../api/api';
 import getFromJSON from '../utils/getFromJSON';
 
@@ -10,13 +10,7 @@ export default function useSpecificWorkshop(id, setWorkshop, setErrorState) {
 				setWorkshop(getFromJSON(res));
 			})
 			.catch(() => {
-				setErrorState(
-					<h2>
-						<br />
-						<br />
-						This workshop couldnt be found
-					</h2>,
-				);
+				setErrorState('Sorry the workshop could not be found. Please search again');
 			});
 	}, [id, setWorkshop, setErrorState]);
 }
