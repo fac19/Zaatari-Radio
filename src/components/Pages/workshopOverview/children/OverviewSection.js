@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import * as SC from './style';
-import PrimaryButton from '../../buttons/PrimaryButton';
-import SecondaryButton from '../../buttons/SecondaryButton';
+import * as SC from '../style';
+import PrimaryButton from '../../../buttons/PrimaryButton';
+import SecondaryButton from '../../../buttons/SecondaryButton';
 
 export default function Main({ overview, id }) {
 	return (

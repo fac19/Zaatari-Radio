@@ -1,5 +1,5 @@
 import React from 'react';
-import * as SC from './style';
+import * as SC from '../style';
 
 export default function LanderHeader() {
 	return (
