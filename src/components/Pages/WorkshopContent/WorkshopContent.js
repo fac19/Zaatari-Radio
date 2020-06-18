@@ -24,7 +24,7 @@ export default function WorkshopContent({ match: { params } }) {
 				{workshop.content ? <Markdown>{workshop.content}</Markdown> : <h1>loading</h1>}
 				<SC.ButtonsWrapper>
 					<BackButton to={`/workshop/overview/${params.ID}`} />
-					<PrimaryButton innerText="WORKSHEETS" to={`/workshop/worksheets/${params.ID}`} />
+					<PrimaryButton innerText="Worksheets" to={`/workshop/worksheets/${params.ID}`} />
 				</SC.ButtonsWrapper>
 				{errorState}
 			</SC.MainContainer>

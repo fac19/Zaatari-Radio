@@ -66,23 +66,15 @@ export const FormLabel = styled.label`
 	color: #5a5a5a;
 `;
 
+// Same styles as Primary Button
 export const FormButton = styled.input`
 	background: ${vars.ocean};
 	color: ${vars.offWhite};
-	font-size: 1em;
-	height: ${vars.smallButtonHeight};
-	border-style: none;
+	font-size: ${vars.smallButtonTextSize};
+	padding: ${vars.smallButtonPadding};
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
 	width: fit-content;
-	text-transform: uppercase;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	padding: 0 0.8em 0 0.8em;
+	border-style: none;
 	cursor: pointer;
 	margin: 1rem 0;
 	transition: all 0.3s;
