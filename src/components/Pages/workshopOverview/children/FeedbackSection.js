@@ -26,7 +26,12 @@ export default function Comments({ feedbackArr }) {
 	}, [feedbackArr]);
 
 	function CreateCommentsList(feedbackNewArray) {
-		return feedbackNewArray.reverse().map((commentObj) => <FeedbackListItem commentObj={commentObj} />);
+		return feedbackNewArray.reverse().map((commentObj) => {
+			if (commentObj.public_comment) {
+				return <FeedbackListItem commentObj={commentObj} />;
+			}
+			return null;
+		});
 	}
 
 	return (
