@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import api from '../../../api/api';
 
-import CommentListItem from './CommentsListItem';
+import FeedbackListItem from './FeedbackListItem';
 import * as SC from './style';
 
 export default function Comments({ feedbackArr }) {
@@ -18,13 +18,7 @@ export default function Comments({ feedbackArr }) {
 						return res.fields;
 					})
 					.catch(() => {
-						setErrorState(
-							<h2>
-								<br />
-								<br />
-								This workshop could not be found
-							</h2>,
-						);
+						setErrorState('Feedback could not be found for this workshop');
 					});
 			});
 			Promise.all(newFeedback).then((res) => setFeedback(res));
@@ -32,14 +26,14 @@ export default function Comments({ feedbackArr }) {
 	}, [feedbackArr]);
 
 	function CreateCommentsList(feedbackNewArray) {
-		return feedbackNewArray.map((commentObj) => <CommentListItem commentObj={commentObj} />);
+		return feedbackNewArray.map((commentObj) => <FeedbackListItem commentObj={commentObj} />);
 	}
 
 	return (
 		<SC.CommentsWrapper>
-			<SC.CommentsTitle>Comments</SC.CommentsTitle>
+			<SC.CommentsTitle>Feedback</SC.CommentsTitle>
 			{CreateCommentsList(feedback)}
-			{errorState}
+			<SC.CommentsTitle>{errorState}</SC.CommentsTitle>
 		</SC.CommentsWrapper>
 	);
 }

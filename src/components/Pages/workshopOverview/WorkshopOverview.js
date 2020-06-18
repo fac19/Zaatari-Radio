@@ -5,9 +5,9 @@ import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
 import * as SC from './style';
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
-import Intro from './TitleSection';
-import Main from './MainSection';
-import Comments from './Comments';
+import IntroSection from './IntroSection';
+import OverviewSection from './OverviewSection';
+import FeedbackSection from './FeedbackSection';
 import BackButton from '../../buttons/BackButton';
 
 export default function WorkshopOverview({ match: { params } }) {
@@ -23,9 +23,9 @@ export default function WorkshopOverview({ match: { params } }) {
 					<SC.Title>{errorState}</SC.Title>
 				) : (
 					<>
-						<Intro authorArr={workshop.workshop_authors} equipment={null} />
-						<Main overview={workshop.overview} id={params.ID} />
-						<Comments feedbackArr={workshop.feedback} />
+						<IntroSection authorArr={workshop.workshop_authors} equipment={null} />
+						<OverviewSection overview={workshop.overview} id={params.ID} />
+						<FeedbackSection feedbackArr={workshop.feedback} />
 					</>
 				)}
 				<BackButton to="/workshops" />

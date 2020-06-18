@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import * as SC from './style';
 
-export default function CommentListItem({ commentObj }) {
+export default function FeedbackListItem({ commentObj }) {
 	return (
 		<>
 			<SC.CommentAuthor>{commentObj.name}</SC.CommentAuthor>
@@ -12,7 +12,7 @@ export default function CommentListItem({ commentObj }) {
 	);
 }
 
-CommentListItem.propTypes = {
+FeedbackListItem.propTypes = {
 	commentObj: PropTypes.shape({
 		name: PropTypes.string,
 		Content: PropTypes.string,
