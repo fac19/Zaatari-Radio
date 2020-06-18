@@ -3,7 +3,7 @@ import * as vars from '../../../styles/variables';
 
 // WorkshopOverview Styles
 export const MainContainer = styled.main`
-	margin: 4rem 8rem 0 12rem;
+	margin: 2rem auto;
 	max-width: ${vars.mainContainerWidth};
 `;
 
@@ -77,6 +77,7 @@ export const CommentsTitle = styled.h2`
 	font-size: 23.43px;
 	line-height: 27px;
 	display: flex;
+	margin: 4rem 0 2rem 0;
 	align-items: center;
 	text-align: center;
 `;
