@@ -14,9 +14,9 @@ export default function Intro() {
 				people being able to administer our radio-based workshops?
 			</SC.Text>
 			<SC.Text>
-				Working with Tech for Better, our solution was an open-source humanitarian platform whereindividuals and other ogranisations are free to
-				access our workshops and resources in additionto uploading their our work. The goal of HumaniBase is to create a platform to support andshare
-				knowledge among social projects worldwide so that we can make a bigger impact together.
+				Working with Tech for Better, our solution was an open-source humanitarian platform where individuals and other ogranisations are free to
+				access our workshops and resources in add and onto uploading their our work. The goal of HumaniBase is to create a platform to support and
+				share knowledge among social projects worldwide so that we can make a bigger impact together.
 			</SC.Text>
 		</SC.Section>
 	);

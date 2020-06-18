@@ -7,11 +7,11 @@ export default function Contribute() {
 		<SC.Section>
 			<SC.Title>How to contribute</SC.Title>
 			<SC.Text>
-				Become a member of HumaniBase by registering yourself as an individual or an organisation.You will have free access to unlimited humanitarian
-				resources, and to the feedback section ofeach workshop to review and fine tune uploaded content plus the ability to easily reach out toother
-				organisations for advice and future collaborations. Once a member, you can uploadyour own resources to contribute to our growing community of
-				projects, receive feedbackfrom others who have implemented aspects of your work, and access other member’sinformation for advice, cooperation
-				and partnerships.
+				Become a member of HumaniBase by registering yourself as an individual or an organisation. You will have free access to unlimited humanitarian
+				resources, and to the feedback section of each workshop to review and fine tune uploaded content plus the ability to easily reach out to other
+				organisations for advice and future collaborations. Once a member, you can upload your own resources to contribute to our growing community of
+				projects, receive feedback from others who have implemented aspects of your work, and access other member&apos;s information for advice,
+				cooperation and partnerships.
 			</SC.Text>
 		</SC.Section>
 	);
