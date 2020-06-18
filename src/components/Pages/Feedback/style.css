@@ -1,10 +1,4 @@
-/* 
-        Use :not with impossible condition so inputs are only hidden 
-        if pseudo selectors are supported. Otherwise the user would see
-        no inputs and no highlighted stars.
-    */
 .rating input[type='radio']:not(:nth-of-type(0)) {
-	/* hide visually */
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;

@@ -71,7 +71,7 @@ export default function FeedbackForm({ ID }) {
 				</SC.FormLabel>
 				<fieldset className="rating">
 					<legend>Workshop Rating</legend>
-
+					<input id="star_rating-1" name="star_rating" type="radio" value="1" ref={register} />
 					<label htmlFor="star_rating-1">1 star</label>
 					<input id="star_rating-2" name="star_rating" type="radio" value="2" ref={register} />
 					<label htmlFor="star_rating-2">2 stars</label>
