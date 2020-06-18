@@ -4,14 +4,8 @@ const Airtable = require('airtable');
 
 var base = new Airtable({ apiKey }).base(apiBaseId);
 
-const data = {
-	public_comment: 'hoorah!',
-	workshop_id: ['reclXZv3JtH77KpzW'],
-	name: 'joe',
-};
-
 exports.handler = function (event, context, callback) {
-	base('feedback').create(data, { typecast: true }, function (err, records) {
+	base('feedback').create(JSON.parse(event.body), { typecast: true }, function (err, records) {
 		if (err) {
 			callback(null, {
 				statusCode: 500,
@@ -23,9 +17,4 @@ exports.handler = function (event, context, callback) {
 			body: JSON.stringify(records),
 		});
 	});
-
-	//   return {
-	//     statusCode: 200,
-	//     body: 'records',
-	//   };
 };

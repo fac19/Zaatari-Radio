@@ -19,7 +19,12 @@ export default function FeedbackForm({ ID }) {
 		const submissionData = { ...data, workshop_id: [ID], public_comment: 'test comment' };
 		console.log('onSubmit -> submissionData', submissionData, e);
 
-		api.submitFeedback({ fields: submissionData }).then().catch();
+		api
+			.submitFeedback(submissionData)
+			.then()
+			.catch((err) => {
+				console.log(err);
+			});
 		/* data looks like: 
       {
         number_of_attendees: "2"
