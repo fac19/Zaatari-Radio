@@ -24,6 +24,17 @@ const SC = {
 		text-align: center;
 
 		cursor: pointer;
+
+		transition: all 0.3s;
+		top: 0px;
+		left: 0px;
+
+		&:hover {
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+			position: relative;
+			top: -2px;
+			left: -2px;
+		}
 	`,
 };
 
