@@ -5,7 +5,7 @@ export default function LanderHeader() {
 	return (
 		<SC.LanderHeader>
 			<SC.LanderTitle>Zaatari Radio</SC.LanderTitle>
-			<SC.LanderText>Innovative humanitarian relief empowering war-affected communities</SC.LanderText>
+			<SC.LanderText>Open-source humanitarian platform for collaborating and sharing resources</SC.LanderText>
 			<SC.LanderLink>Find out more</SC.LanderLink>
 			<SC.LanderLink>
 				<SC.Icon />

@@ -2,6 +2,10 @@
 	opacity: 0 !important;
 }
 
+body {
+	margin: 0;
+}
+
 @media only screen and (min-width: 600px) {
 	main {
 		margin-left: 190px;

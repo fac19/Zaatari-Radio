@@ -2,9 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import * as vars from '../../../styles/variables';
 
+// Home styles
+export const HomeContainer = styled.div`
+	padding: 0 ${vars.homeHorizontalPadding};
+`;
+
 // LanderSection Syles
 export const LanderHeader = styled.header`
-	margin-top: 73px;
+	padding: 0 ${vars.homeHorizontalPadding};
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
@@ -14,7 +19,7 @@ export const LanderTitle = styled.h1`
 	font-family: ${vars.headerFont};
 	font-style: normal;
 	font-weight: bold;
-	font-size: 45px;
+	font-size: ${vars.DinHeaderBig};
 	color: ${vars.night};
 	text-transform: uppercase;
 `;
@@ -56,23 +61,15 @@ export const Icon = () => (
 // FaqSection styles
 export const FaqPair = styled.article`
 	max-width: 500px;
-	margin: 0 auto 2em auto;
-`;
-
-export const FaqSection = styled.section`
-	background-color: ${vars.offWhite};
 	font-family: ${vars.standardFont};
 `;
 
-export const FaqTitle = styled.h2`
-	max-width: 500px;
-	margin: 0 auto;
+export const FaqSection = styled.section`
+	font-family: ${vars.standardFont};
 `;
 
 // Shared Styles
-export const Section = styled.section`
-	margin: 30px 45px 0 45px;
-`;
+export const Section = styled.section``;
 
 export const Title = styled.h2`
 	font-family: ${vars.standardFont};
@@ -101,6 +98,5 @@ export const BoldText = styled(Text)`
 
 export const ImageStrip = styled.div`
 	display: flex;
-	margin: 0 auto;
 	justify-content: center;
 `;

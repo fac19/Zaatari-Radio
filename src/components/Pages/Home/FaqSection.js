@@ -15,7 +15,7 @@ function FAQ({ q, a }) {
 export default function FAQs() {
 	return (
 		<SC.FaqSection>
-			<SC.FaqTitle>FAQs</SC.FaqTitle>
+			<SC.Title>FAQs</SC.Title>
 			<FAQ q="How do I access workshops?" a="Navigate to the workshop tab and browse away. Use the filters to find the project that suitsyou best!" />
 			<FAQ
 				q="How can I contribute?"

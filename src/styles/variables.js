@@ -12,6 +12,7 @@ export const smallButtonHeight = '38px';
 export const titleBarVerticalPadding = '8px';
 export const mainContainerWidth = '700px';
 export const cardWidth = '40rem';
+export const homeHorizontalPadding = '1.5rem';
 
 // font-families
 export const headerFont = 'DIN, sans-serif';
