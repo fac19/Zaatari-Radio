@@ -26,7 +26,7 @@ export default function Comments({ feedbackArr }) {
 	}, [feedbackArr]);
 
 	function CreateCommentsList(feedbackNewArray) {
-		return feedbackNewArray.map((commentObj) => <FeedbackListItem commentObj={commentObj} />);
+		return feedbackNewArray.reverse().map((commentObj) => <FeedbackListItem commentObj={commentObj} />);
 	}
 
 	return (
