@@ -2,9 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import * as vars from '../../../styles/variables';
 
+// Home styles
+export const HomeContainer = styled.div`
+	padding: 0 ${vars.homeHorizontalPadding};
+`;
+
 // LanderSection Syles
-export const LanderSection = styled.section`
-	margin-top: 73px;
+export const LanderHeader = styled.header`
+	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
@@ -14,40 +19,23 @@ export const LanderTitle = styled.h1`
 	font-family: ${vars.headerFont};
 	font-style: normal;
 	font-weight: bold;
-	font-size: 45px;
-	line-height: 54px;
-	display: flex;
-	align-items: center;
-	text-align: center;
+	font-size: ${vars.DinHeaderBig};
 	color: ${vars.night};
 	text-transform: uppercase;
-	margin: 64px 0 0 45px;
 `;
 
 export const LanderText = styled.p`
 	font-family: ${vars.standardFont};
 	font-style: italic;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
+	font-size: ${vars.medP};
 	color: ${vars.night};
-	margin: 0 45px 0 45px;
 `;
 
-export const HowToLink = styled.a`
+export const LanderLink = styled.a`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	text-transform: uppercase;
+	font-size: ${vars.subtitle};
 	color: ${vars.night};
-	margin: 90px 45px 24px 45px;
+	text-transform: uppercase;
 `;
 
 export const Icon = () => (
@@ -67,54 +55,20 @@ export const Icon = () => (
 	</svg>
 );
 
-// faq styles
-export const FaqPair = styled.article`
-	max-width: 500px;
-	margin: 0 auto 2em auto;
-`;
-
-export const FaqSection = styled.section`
-	background-color: ${vars.offWhite};
-	font-family: ${vars.standardFont};
-`;
-
-export const FaqTitle = styled.h2`
-	max-width: 500px;
-	margin: 0 auto;
-`;
-
-// All Home Styles
-export const Section = styled.section`
-	margin: 30px 45px 0 45px;
-`;
+// Shared Styles
+export const Section = styled.section``;
 
 export const Title = styled.h2`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 21px;
+	font-size: ${vars.subtitle};
 	color: ${vars.night};
 `;
 
 export const Text = styled.p`
 	font-family: ${vars.standardFont};
-	font-style: normal;
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: ${vars.medP}
 	display: flex;
 	align-items: center;
 	text-align: justify;
 	color: ${vars.night};
-`;
-
-export const BoldText = styled(Text)`
-	font-weight: bold;
-`;
-
-export const ImageStrip = styled.div`
-	display: flex;
-	margin: 0 auto;
-	justify-content: center;
 `;

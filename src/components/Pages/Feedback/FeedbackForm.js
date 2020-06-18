@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`
 	display: flex;
@@ -9,7 +10,8 @@ const StyledForm = styled.form`
 	margin-top: 8rem;
 `;
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ id }) {
+	console.log(id); // to send with the api request
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
 		console.log('data', data);
@@ -67,3 +69,7 @@ export default function FeedbackForm() {
 		</>
 	);
 }
+
+FeedbackForm.propTypes = {
+	id: PropTypes.string.isRequired,
+};

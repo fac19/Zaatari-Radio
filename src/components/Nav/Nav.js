@@ -84,7 +84,7 @@ export default function Nav() {
 						<AccountBalanceIcon />
 					</StyledLink>
 					<NavTitle button className={classes.title}>
-						<StyledLink to="/">Zaatari Radio</StyledLink>
+						<StyledLink to="/">HumaniBase</StyledLink>
 					</NavTitle>
 					<Hidden smUp implementation="css">
 						<IconButton aria-label="open drawer" color="secondary" onClick={handleDrawerToggle}>
