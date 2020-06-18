@@ -16,24 +16,19 @@ export default function FeedbackForm({ ID }) {
 	const { register, handleSubmit } = useForm();
 
 	const onSubmit = (data, e) => {
-		// e.preventDefault();
-
-		const submissionData = { ...data, workshop_id: ID };
+		const submissionData = { ...data, workshop_id: [ID], public_comment: 'test comment' };
 		console.log('onSubmit -> submissionData', submissionData, e);
 
-		api
-			.submitFeedback([{ fields: submissionData }])
-			.then()
-			.catch();
+		api.submitFeedback({ fields: submissionData }).then().catch();
 		/* data looks like: 
       {
-        attendees: "2"
+        number_of_attendees: "2"
         comments: "asdf"
         email: "asdf@asdf.com"
         name: "asdf asdf"
         organisation: "asdf"
-        starRating: " 5"
-        studentFeedback: "asdf"
+        star_rating: " 5"
+        students_enjoyed: "asdf"
       }
     */
 	};
@@ -53,25 +48,25 @@ export default function FeedbackForm({ ID }) {
 					Organisation:
 					<input id="organisation" type="text" placeholder="" name="organisation" ref={register} />
 				</label>
-				<label htmlFor="attendees">
+				<label htmlFor="number_of_attendees">
 					How many attendees were there?
-					<input id="attendees" type="number" placeholder="0" name="attendees" ref={register({ required: true })} />
+					<input id="number_of_attendees" type="number" placeholder="0" name="number_of_attendees" ref={register({ required: true })} />
 				</label>
 				<fieldset>
 					<legend>Rating:</legend>
-					<input name="starRating" type="radio" value="1" ref={register} />
-					<input name="starRating" type="radio" value=" 2" ref={register} />
-					<input name="starRating" type="radio" value=" 3" ref={register} />
-					<input name="starRating" type="radio" value=" 4" ref={register} />
-					<input name="starRating" type="radio" value=" 5" ref={register} />
+					<input name="star_rating" type="radio" value="1" ref={register} />
+					<input name="star_rating" type="radio" value=" 2" ref={register} />
+					<input name="star_rating" type="radio" value=" 3" ref={register} />
+					<input name="star_rating" type="radio" value=" 4" ref={register} />
+					<input name="star_rating" type="radio" value=" 5" ref={register} />
 				</fieldset>
 				<label htmlFor="studentFeedback">
 					What did students enjoy most?
-					<textarea id="studentFeedback" name="studentFeedback" ref={register} />
+					<textarea id="students_enjoyed" name="students_enjoyed" ref={register} />
 				</label>
-				<label htmlFor="additionalComments">
+				<label htmlFor="public_comment">
 					Public Comment
-					<textarea id="additionalComments" name="comments" ref={register} />
+					<textarea id="public_comment" name="public_comment" ref={register} />
 				</label>
 				<input type="submit" />
 			</StyledForm>
