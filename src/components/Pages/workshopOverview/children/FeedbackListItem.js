@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as SC from './style';
+import * as SC from '../style';
 
 export default function FeedbackListItem({ commentObj }) {
 	return (

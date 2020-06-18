@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import api from '../../../api/api';
+import api from '../../../../api/api';
 
 import FeedbackListItem from './FeedbackListItem';
-import * as SC from './style';
+import * as SC from '../style';
 
 export default function Comments({ feedbackArr }) {
 	const [feedback, setFeedback] = React.useState([]);

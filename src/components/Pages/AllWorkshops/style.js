@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as vars from '../../../styles/variables';
 
 export const Main = styled.section`
 	display: flex;
@@ -6,6 +7,16 @@ export const Main = styled.section`
 	align-items: center;
 	justify-content: center;
 	margin-top: 2rem;
+`;
+
+export const Title = styled.h1`
+	text-transform: uppercase;
+	font-family: ${vars.headerFont};
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	line-height: 45px;
+	color: #322f2f;
 `;
 
 export const AllWorkshopHeader = styled.div`

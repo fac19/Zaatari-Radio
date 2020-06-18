@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import api from '../../../api/api';
+import api from '../../../../api/api';
 
-import * as SC from './style';
+import * as SC from '../style';
 
 export default function Intro({ authorArr, equipment }) {
 	const [authors, setAuthors] = useState([]);

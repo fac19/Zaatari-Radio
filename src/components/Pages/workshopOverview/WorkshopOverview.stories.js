@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import FeedbackSection from './FeedbackSection';
+import FeedbackSection from './children/FeedbackSection';
 
 export default {
 	component: FeedbackSection,

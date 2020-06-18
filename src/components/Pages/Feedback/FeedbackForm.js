@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import api from '../../../api/api';
 import * as SC from './style';
@@ -12,14 +12,22 @@ import TitleBar from '../../WorkshopHeader/TitleBar';
 export default function FeedbackForm({ ID }) {
 	const [nameError, setNameError] = React.useState('');
 	const [emailError, setEmailError] = React.useState('');
+	const [submitted, setSubmitted] = React.useState(false);
 	const { register, handleSubmit } = useForm();
+	const history = useHistory();
 
 	const onSubmit = (data) => {
-		const submissionData = { ...data, workshop_id: [ID], public_comment: 'test comment' };
+		if (submitted) {
+			return;
+		}
+		setSubmitted(true);
+		const submissionData = { ...data, workshop_id: [ID] };
 
 		api
 			.submitFeedback(submissionData)
-			.then()
+			.then(() => {
+				history.push(`/workshop/overview/${ID}`);
+			})
 			.catch((err) => {
 				console.log(err);
 			});

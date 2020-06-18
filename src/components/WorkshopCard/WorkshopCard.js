@@ -6,7 +6,9 @@ import * as SC from './style';
 export default function WorkshopCard({ data }) {
 	return (
 		<SC.Article>
-			<SC.Image src={data.fields.carousel_pictures[0].url} />
+			<Link to={`/workshop/overview/${data.id}`}>
+				<SC.Image src={data.fields.carousel_pictures[0].url} />
+			</Link>
 			<SC.ButtonContainer>
 				<SC.Button as={Link} to={`/workshop/overview/${data.id}`}>
 					<SC.CardTitle>{data.fields.title}</SC.CardTitle>
