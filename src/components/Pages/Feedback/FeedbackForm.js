@@ -16,7 +16,6 @@ export default function FeedbackForm({ ID }) {
 
 	const onSubmit = (data) => {
 		const submissionData = { ...data, workshop_id: [ID], public_comment: 'test comment' };
-		console.log('onSubmit -> submissionData', submissionData);
 
 		api
 			.submitFeedback(submissionData)
