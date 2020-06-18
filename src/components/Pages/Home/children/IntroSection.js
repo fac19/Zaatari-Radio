@@ -4,7 +4,7 @@ import * as SC from '../style';
 
 export default function Intro() {
 	return (
-		<SC.Section>
+		<SC.Section id="AboutSection">
 			<SC.Title>About HumaniBase</SC.Title>
 			<SC.Text>
 				After working in Zaatari Refugee Camp in Jordan for two years from Zaatari Radio station, our humanitarian project had to temporarily stop

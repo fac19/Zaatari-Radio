@@ -12,7 +12,9 @@ export const LanderHeader = styled.header`
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
+	height: 95vh;
 `;
 
 export const LanderTitle = styled.h1`
@@ -22,6 +24,16 @@ export const LanderTitle = styled.h1`
 	font-size: ${vars.DinHeaderBig};
 	color: ${vars.night};
 	text-transform: uppercase;
+
+	animation: fadeIn 3s ease 0.5s both;
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
 
 export const LanderText = styled.p`
@@ -29,14 +41,63 @@ export const LanderText = styled.p`
 	font-style: italic;
 	font-size: ${vars.medP};
 	color: ${vars.night};
+
+	animation: fadeIn 3s ease 2s both;
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
 
 export const LanderLink = styled.a`
 	font-family: ${vars.standardFont};
-	font-size: ${vars.subtitle};
+	font-size: 5rem;
 	color: ${vars.night};
-	text-transform: uppercase;
+
+	&:hover {
+		color: ${vars.offWhite};
+		text-decoration: none;
+	}
+
+	&::after {
+		content: '\\27F1';
+	}
+
+	animation: bouncing 0.7s 3s infinite alternate;
+	@keyframes bouncing {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-25px);
+		}
+	}
 `;
+
+// export const LanderLink = styled(Link)`
+// 	font-family: ${vars.standardFont};
+// 	font-size: 5rem;
+// 	color: ${vars.night};
+
+// 	&:hover {
+// 		color: ${vars.offWhite};
+// 		text-decoration: none;
+// 	}
+
+// 	&::after {
+// 		content: '\\27F1';
+// 	}
+
+// 	animation: bouncing 0.7s 3s infinite alternate;
+// 	@keyframes bouncing {
+// 		0% { transform: translateY(0); }
+// 		100% { transform: translateY(-25px); }
+// 	}
+// `;
 
 export const Icon = () => (
 	<svg width="21" height="20" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,6 +123,11 @@ export const Section = styled.section`
 	@media only screen and (max-width: 600px) {
 		margin: 0 0.3rem;
 	}
+`;
+
+export const SectionLanderLink = styled(Section)`
+	display: flex;
+	justify-content: center;
 `;
 
 export const Title = styled.h2`
