@@ -12,17 +12,19 @@ const StyledForm = styled.form`
 	margin-top: 8rem;
 `;
 
-export default function FeedbackForm({ match: { params } }) {
-	const { register, handleSubmit, errors } = useForm();
+export default function FeedbackForm({ ID }) {
+	const { register, handleSubmit } = useForm();
 
-	const onSubmit = (data) => {
-		// How does airtable want the ID to be provided?
+	const onSubmit = (data, e) => {
+		// e.preventDefault();
+
+		const submissionData = { ...data, workshop_id: ID };
+		console.log('onSubmit -> submissionData', submissionData, e);
+
 		api
-			.submitFeedback(params.ID, [{ fields: data }])
+			.submitFeedback([{ fields: submissionData }])
 			.then()
 			.catch();
-
-		console.log('data', data);
 		/* data looks like: 
       {
         attendees: "2"
@@ -35,7 +37,6 @@ export default function FeedbackForm({ match: { params } }) {
       }
     */
 	};
-	console.log('error', errors);
 
 	return (
 		<>
@@ -79,9 +80,5 @@ export default function FeedbackForm({ match: { params } }) {
 }
 
 FeedbackForm.propTypes = {
-	match: PropTypes.shape({
-		params: PropTypes.shape({
-			ID: PropTypes.string,
-		}),
-	}).isRequired,
+	ID: PropTypes.string.isRequired,
 };

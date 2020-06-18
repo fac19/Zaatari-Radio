@@ -31,7 +31,7 @@ function App() {
 							<Route exact path="/workshop/content/:ID" component={WorkshopContent} />
 							{/* <Route exact path="/workshop/worksheet/:ID" component={WorkshopWorksheet} /> */}
 							<Route exact path="/workshop/worksheets/:ID" component={Worksheets} />
-							<Route exact path="/workshop/feedback" component={Feedback} />
+							<Route exact path="/workshop/feedback/:ID" component={Feedback} />
 						</Switch>
 					</main>
 				</div>
