@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as vars from '../../../styles/variables';
 
 // LanderSection Syles
-export const LanderSection = styled.section`
+export const LanderHeader = styled.header`
 	margin-top: 73px;
 	background: ${vars.sand};
 	display: flex;
@@ -15,13 +15,8 @@ export const LanderTitle = styled.h1`
 	font-style: normal;
 	font-weight: bold;
 	font-size: 45px;
-	line-height: 54px;
-	display: flex;
-	align-items: center;
-	text-align: center;
 	color: ${vars.night};
 	text-transform: uppercase;
-	margin: 64px 0 0 45px;
 `;
 
 export const LanderText = styled.p`
@@ -29,25 +24,16 @@ export const LanderText = styled.p`
 	font-style: italic;
 	font-weight: normal;
 	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
 	color: ${vars.night};
-	margin: 0 45px 0 45px;
 `;
 
-export const HowToLink = styled.a`
+export const LanderLink = styled.a`
 	font-family: ${vars.standardFont};
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 16px;
-	display: flex;
-	align-items: center;
-	text-align: center;
 	text-transform: uppercase;
 	color: ${vars.night};
-	margin: 90px 45px 24px 45px;
 `;
 
 export const Icon = () => (
@@ -67,7 +53,7 @@ export const Icon = () => (
 	</svg>
 );
 
-// faq styles
+// FaqSection styles
 export const FaqPair = styled.article`
 	max-width: 500px;
 	margin: 0 auto 2em auto;
@@ -83,7 +69,7 @@ export const FaqTitle = styled.h2`
 	margin: 0 auto;
 `;
 
-// All Home Styles
+// Shared Styles
 export const Section = styled.section`
 	margin: 30px 45px 0 45px;
 `;
