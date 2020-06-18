@@ -1,9 +1,9 @@
 import React from 'react';
-import LanderHeader from './LanderHeader';
-import IntroSection from './IntroSection';
-import BrowseSection from './BrowseSection';
-import ContributeSection from './ContributeSection';
-import FaqSection from './FaqSection';
+import LanderHeader from './children/LanderHeader';
+import IntroSection from './children/IntroSection';
+import BrowseSection from './children/BrowseSection';
+import ContributeSection from './children/ContributeSection';
+import FaqSection from './children/FaqSection';
 import * as SC from './style';
 
 export default function Home() {

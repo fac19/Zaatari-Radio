@@ -1,6 +1,5 @@
 import React from 'react';
 import * as SC from './style';
-import { Title1 } from '../../../styles/componentsStyles';
 import WorkshopCard from '../../WorkshopCard/WorkshopCard';
 import api from '../../../api/api';
 
@@ -29,7 +28,7 @@ export default function AllWorkshops() {
 		<>
 			<SC.AllWorkshopHeader>
 				{error || ''}
-				<Title1>All Workshops</Title1>
+				<SC.Title>All Workshops</SC.Title>
 			</SC.AllWorkshopHeader>
 			<SC.Main>{allWorkshopData ? createWorkshopList() : <h1>Loading...</h1>}</SC.Main>
 		</>

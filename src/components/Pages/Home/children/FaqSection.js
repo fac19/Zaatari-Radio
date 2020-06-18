@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as SC from './style';
+import * as SC from '../style';
 
 function FAQ({ q, a }) {
 	return (

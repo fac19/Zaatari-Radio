@@ -5,9 +5,9 @@ import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
 
 import * as SC from './style';
 import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
-import IntroSection from './IntroSection';
-import OverviewSection from './OverviewSection';
-import FeedbackSection from './FeedbackSection';
+import IntroSection from './children/IntroSection';
+import OverviewSection from './children/OverviewSection';
+import FeedbackSection from './children/FeedbackSection';
 import BackButton from '../../buttons/BackButton';
 
 export default function WorkshopOverview({ match: { params } }) {
