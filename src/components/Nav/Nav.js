@@ -1,125 +1,24 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import { ThemeProvider, makeStyles } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
-import { NavTitle, StyledLink } from '../../styles/componentsStyles';
-
-const theme = createMuiTheme({
-	palette: {
-		primary: {
-			main: '#07031A',
-		},
-		secondary: {
-			main: '#FFFFFF',
-		},
-	},
-});
-
-const useStyles = makeStyles(() => ({
-	title: {
-		flexGrow: 1,
-		position: 'relative',
-		top: '.2rem',
-	},
-	drawerPaper: {
-		marginTop: '4rem',
-		width: 190,
-	},
-	dropperPaper: {
-		marginTop: '3.5rem',
-		width: 190,
-	},
-}));
-
-export default function Nav() {
-	const classes = useStyles();
-	const [mobileOpen, setMobileOpen] = React.useState(false);
-
-	const navItems = [
-		{
-			title: 'Home',
-			titleHref: '/',
-		},
-		{
-			title: 'View Workshops',
-			titleHref: '/workshops',
-		},
-		{
-			title: 'Contact',
-			titleHref: '/',
-		},
-	];
-
-	const handleDrawerToggle = () => {
-		setMobileOpen(!mobileOpen);
-	};
-
-	const drawer = (
-		<>
-			<List>
-				{navItems.map((item) => (
-					<ListItem button key={item.title} component={StyledLink} to={item.titleHref}>
-						<ListItemText primary={item.title} />
-					</ListItem>
-				))}
-			</List>
-		</>
-	);
-
+export default function NavBar() {
 	return (
-		<ThemeProvider theme={theme}>
-			<AppBar positon="static">
-				<Toolbar color="primary">
-					<StyledLink to="/">
-						<AccountBalanceIcon />
-					</StyledLink>
-					<NavTitle button className={classes.title}>
-						<StyledLink to="/">Zaatari Radio</StyledLink>
-					</NavTitle>
-					<Hidden smUp implementation="css">
-						<IconButton aria-label="open drawer" color="secondary" onClick={handleDrawerToggle}>
-							<MenuIcon />
-						</IconButton>
-					</Hidden>
-				</Toolbar>
-			</AppBar>
-			<nav className={classes.drawer} aria-label="Home View Workshops Contact">
-				<Hidden smUp implementation="css">
-					<Drawer
-						classes={{
-							paper: classes.dropperPaper,
-						}}
-						variant="temporary"
-						anchor="left"
-						open={mobileOpen}
-						onClose={handleDrawerToggle}
-					>
-						{drawer}
-					</Drawer>
-				</Hidden>
-				<Hidden xsDown implementation="css">
-					<Drawer
-						classes={{
-							paper: classes.drawerPaper,
-						}}
-						variant="permanent"
-						anchor="left"
-						open
-					>
-						{drawer}
-					</Drawer>
-				</Hidden>
-			</nav>
-		</ThemeProvider>
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+			<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Collapse id="responsive-navbar-nav">
+				<Nav className="mr-auto">
+					<Nav.Link href="#features">Features</Nav.Link>
+					<Nav.Link href="#pricing">Pricing</Nav.Link>
+				</Nav>
+				<Nav>
+					<Nav.Link href="#deets">More deets</Nav.Link>
+					<Nav.Link eventKey={2} href="#memes">
+						Dank memes
+					</Nav.Link>
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
 	);
 }
