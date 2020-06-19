@@ -8,27 +8,22 @@ const SC = {
 	LandingButton: styled.button`
 		background-color: ${vars.sand};
 		color: ${vars.night};
-		font-size: 1em;
-		height: ${vars.medButtonHeight};
-		border-style: none;
+		font-size: ${vars.medButtonTextSize};
 		font-family: ${vars.standardFont};
-		font-style: normal;
-		font-weight: 300;
-		font-size: 21.216px;
-		line-height: 25px;
-		width: auto;
+
 		display: flex;
-		align-items: center;
-		text-align: center;
-		padding: 0 0.8em 0 0.8em;
 		margin: 45px auto;
+		padding: ${vars.medButtonPadding};
 		cursor: pointer;
+		border-style: none;
 
 		transition: all 0.3s;
 		top: 0px;
 		left: 0px;
 
 		&:hover {
+			background: ${vars.night};
+			color: ${vars.sand};
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 			position: relative;
 			top: -2px;

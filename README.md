@@ -1,13 +1,29 @@
-# Zaatari-Radio-Frontend
+# HumaniBase (was Zaatari Radio)
 
 [![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
 
-preamble
+## Introduction
+This is an app where the product owner can upload workshops so that people from the NGO Action for Change who are on the ground in the Zaatari refugee camp in Jordan can find them and administer them to children.
 
-## Local deployment
+Due to CV19 the product owner has not been able to go to Jordan so wants a way to provide workshops remotely.
 
-How to deploy locally. Need netlify CLI installed
+## Features
+- Learn more aboutHumaniBase on the landing page
+- Find workshops on the Find Workshops page and look at the workshop overview page
+- Submit feedback on the workshops
+- See the workshop contents and listen to embedded audio
+- Go to a worksheets page to download attachments for workshop
+- Currently you cannot add a workshop on the FE
+
+## Code Review 
+### Local deployment
+As the Netlify CLI logins are needed please review the deployed version.
+
+### Storybook
+However, if you'd like to see storybook in action you can clone the repo, `npm i` and `npm run storybook`. Storybook is a place where we developed components in isolation.
+
+![stories](https://i.imgur.com/2e4L66y.png)
 
 ## Database schema
 

@@ -19,7 +19,7 @@ export const CardTitle = styled.h2`
 	font-size: 30px;
 	font-weight: bold;
 	color: black;
-	text-transform: uppercase;
+
 	margin: 0;
 	padding: 8px 0 5px 0;
 `;

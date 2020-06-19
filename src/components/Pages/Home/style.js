@@ -6,15 +6,24 @@ import * as vars from '../../../styles/variables';
 export const HomeContainer = styled.div`
 	padding: 0 ${vars.homeHorizontalPadding};
 `;
-// margin: 0 auto;
-// max-width: 55rem;
+
+export const TextSpan = styled.span`
+	font-weight: bold;
+	cursor: pointer;
+
+	&:hover {
+		color: ${vars.sand};
+	}
+`;
 
 // LanderSection Syles
 export const LanderHeader = styled.header`
 	background: ${vars.sand};
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	padding: 6rem ${vars.homeHorizontalPadding} 1.5rem ${vars.homeHorizontalPadding};
+	height: 95vh;
 `;
 
 export const LanderTitle = styled.h1`
@@ -24,6 +33,16 @@ export const LanderTitle = styled.h1`
 	font-size: ${vars.DinHeaderBig};
 	color: ${vars.night};
 	text-transform: uppercase;
+
+	animation: fadeIn 3s ease 0.5s both;
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
 
 export const LanderText = styled.p`
@@ -31,13 +50,59 @@ export const LanderText = styled.p`
 	font-style: italic;
 	font-size: ${vars.medP};
 	color: ${vars.night};
+
+	animation: fadeIn 3s ease 2s both;
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
 
-export const LanderLink = styled.a`
+export const SectionLink = styled.a`
 	font-family: ${vars.standardFont};
-	font-size: ${vars.subtitle};
+	font-size: 3rem;
 	color: ${vars.night};
-	text-transform: uppercase;
+	margin: 0 auto;
+
+	&:hover {
+		color: ${vars.sand};
+		text-decoration: none;
+	}
+
+	&::after {
+		content: '\\290B';
+	}
+`;
+
+export const LanderLink = styled(SectionLink)`
+	font-size: 5rem;
+	&:hover {
+		color: ${vars.offWhite};
+	}
+
+	&::after {
+		content: '\\27F1';
+	}
+
+	animation: bouncing 0.7s 3s infinite alternate;
+	@keyframes bouncing {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-25px);
+		}
+	}
+`;
+
+export const BackToTopLink = styled(SectionLink)`
+	&::after {
+		content: '\\290A';
+	}
 `;
 
 export const Icon = () => (
@@ -58,12 +123,25 @@ export const Icon = () => (
 );
 
 // Shared Styles
-export const Section = styled.section`
+export const SectionLanderTitle = styled.section`
 	padding-top: 2rem;
 	margin: 0 15%;
+
 	@media only screen and (max-width: 600px) {
 		margin: 0 0.3rem;
 	}
+`;
+
+export const SectionLanderLink = styled(SectionLanderTitle)`
+	display: flex;
+	justify-content: center;
+`;
+
+export const Section = styled(SectionLanderTitle)`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 `;
 
 export const Title = styled.h2`
@@ -79,4 +157,16 @@ export const Text = styled.p`
 	align-items: center;
 	text-align: justify;
 	color: ${vars.night};
+`;
+
+export const FaqArticle = styled.article`
+	margin-bottom: 1rem;
+`;
+
+export const FaqTextHover = styled.p`
+	margin: 0;
+	&:hover {
+		color: ${vars.olive};
+		font-weight: 800;
+	}
 `;

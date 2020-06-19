@@ -8,27 +8,22 @@ const SC = {
 	SecondaryButton: styled.button`
 		background-color: ${vars.olive};
 		color: ${vars.offWhite};
-		font-size: 1em;
-		height: ${vars.smallButtonHeight};
-		border-style: none;
 		font-family: ${vars.standardFont};
-		font-style: normal;
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 19px;
+		font-size: ${vars.smallButtonTextSize};
+		padding: ${vars.smallButtonPadding};
+		border-style: none;
+		cursor: pointer;
 
 		display: flex;
 		align-items: center;
 		text-align: center;
-		padding: 0 0.8em 0 0.8em;
-
-		cursor: pointer;
 
 		transition: all 0.3s;
 		top: 0px;
 		left: 0px;
 
 		&:hover {
+			background: #78788c;
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 			position: relative;
 			top: -2px;

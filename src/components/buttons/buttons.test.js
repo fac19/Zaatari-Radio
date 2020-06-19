@@ -7,7 +7,7 @@ import SecondaryButton from './SecondaryButton';
 test('BackButton contains the text "BACK"', () => {
 	// !(screen.getByText("Back"))
 	render(<BackButton to="nowhere" />);
-	screen.getAllByText('BACK');
+	screen.getAllByText('Back');
 });
 
 test('PrimaryButton contains text passed in as a prop without modifying it', () => {
