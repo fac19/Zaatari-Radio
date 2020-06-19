@@ -12,6 +12,8 @@ import TitleBar from '../../WorkshopHeader/TitleBar';
 export default function FeedbackForm({ ID }) {
 	const [nameError, setNameError] = React.useState('');
 	const [emailError, setEmailError] = React.useState('');
+	const [numberError, setNumberError] = React.useState('');
+	const [submissionError, setSubmissionError] = React.useState('');
 	const [submitted, setSubmitted] = React.useState(false);
 	const { register, handleSubmit } = useForm();
 	const history = useHistory();
@@ -28,8 +30,10 @@ export default function FeedbackForm({ ID }) {
 			.then(() => {
 				history.push(`/workshop/overview/${ID}`);
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
+				setSubmissionError(
+					<SC.ErrorMessage>We couldn&apost submit this feedback - are you sure your URL contains a valid workshop ID?</SC.ErrorMessage>,
+				);
 			});
 	};
 
@@ -38,7 +42,7 @@ export default function FeedbackForm({ ID }) {
 			<SC.StyledForm onSubmit={handleSubmit(onSubmit)}>
 				<TitleBar title="Workshop Feedback" />
 				<SC.FormLabel htmlFor="name">
-					Full Name:
+					Full Name*:
 					<SC.FormInput
 						id="name"
 						type="text"
@@ -47,14 +51,18 @@ export default function FeedbackForm({ ID }) {
 						ref={register({
 							required: true,
 							validate: (value) => {
-								return /.+\s.+/i.test(value) || setNameError('Please enter your first and second name');
+								if (/.+\s.+/i.test(value)) {
+									setNameError('');
+									return true;
+								}
+								return setNameError(<SC.ErrorMessage>Please enter your first and second name</SC.ErrorMessage>);
 							},
 						})}
 					/>
 					{nameError}
 				</SC.FormLabel>
 				<SC.FormLabel htmlFor="email">
-					Email:
+					Email*:
 					<SC.FormInput
 						id="email"
 						type="text"
@@ -63,20 +71,48 @@ export default function FeedbackForm({ ID }) {
 						ref={register({
 							required: true,
 							validate: (value) => {
-								return /\S+@\S+\.\S+/i.test(value) || setEmailError('') || setEmailError('Please enter a valid email');
+								if (/\S+@\S+\.\S+/i.test(value)) {
+									setEmailError('');
+									return true;
+								}
+								return setEmailError(<SC.ErrorMessage>Please enter a valid email</SC.ErrorMessage>);
 							},
 						})}
 					/>
 					{emailError}
 				</SC.FormLabel>
 				<SC.FormLabel htmlFor="organisation">
-					Organisation:
-					<SC.FormInput id="organisation" type="text" placeholder="" name="organisation" ref={register} />
+					Organisation*:
+					<SC.FormInput
+						id="organisation"
+						type="text"
+						placeholder=""
+						name="organisation"
+						ref={register({
+							required: true,
+						})}
+					/>
 				</SC.FormLabel>
 				<SC.FormLabel htmlFor="number_of_attendees">
-					How many attendees were there?
-					<SC.FormInput id="number_of_attendees" type="number" placeholder="0" name="number_of_attendees" ref={register({ required: true })} />
+					How many attendees were there?*
+					<SC.FormInput
+						id="number_of_attendees"
+						type="text"
+						placeholder="0"
+						name="number_of_attendees"
+						ref={register({
+							required: true,
+							validate: (value) => {
+								const match = value.match(/[0-9]+/);
+								if (match) {
+									return true;
+								}
+								return setNumberError(<SC.ErrorMessage>Please enter a number</SC.ErrorMessage>);
+							},
+						})}
+					/>
 				</SC.FormLabel>
+				{numberError}
 				<fieldset className="rating">
 					<legend>Workshop Rating</legend>
 					<input id="star_rating-1" name="star_rating" type="radio" value="1" ref={register} />
@@ -106,7 +142,9 @@ export default function FeedbackForm({ ID }) {
 					Public Comment
 					<SC.FormText id="public_comment" name="public_comment" ref={register} />
 				</SC.FormLabel>
-				<SC.FormButton type="submit" innerText="Submit" />
+				<SC.FormButton type="submit" value="SUBMIT" />
+				{submissionError}
+				Required fields are marked with aterisks (*)
 			</SC.StyledForm>
 		</>
 	);

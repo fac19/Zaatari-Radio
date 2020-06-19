@@ -29,9 +29,7 @@ export default function Browse() {
 				Scroll down to <SC.TextSpan onClick={handleClick}>learn how to contribute.</SC.TextSpan>
 			</SC.Text>
 
-			<SC.Text>
-				<SC.SectionLink href="#ContributeSection" onClick={handleClick} />
-			</SC.Text>
+			<SC.SectionLink href="#ContributeSection" onClick={handleClick} />
 		</SC.Section>
 	);
 }

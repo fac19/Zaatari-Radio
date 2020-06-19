@@ -87,3 +87,8 @@ export const FormButton = styled.input`
 		left: -2px;
 	}
 `;
+
+export const ErrorMessage = styled.p`
+	font-family: ${vars.standardFont};
+	color: ${vars.warningRed};
+`;

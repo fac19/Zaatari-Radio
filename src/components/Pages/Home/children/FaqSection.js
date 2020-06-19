@@ -39,9 +39,7 @@ export default function FAQs() {
 				Back to <SC.TextSpan onClick={handleClick}>the top.</SC.TextSpan>
 			</SC.Text>
 
-			<SC.Text>
-				<SC.BackToTopLink href="#NavBar" onClick={handleClick} />
-			</SC.Text>
+			<SC.BackToTopLink href="#NavBar" onClick={handleClick} />
 		</SC.Section>
 	);
 }

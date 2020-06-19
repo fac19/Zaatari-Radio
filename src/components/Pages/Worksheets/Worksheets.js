@@ -38,9 +38,12 @@ export default function Worksheets({ match: { params } }) {
 	return (
 		<>
 			<WorkshopHeader images={workshop.images} date={workshop.date_created} tags={workshop.tags} title={workshop.title} />
-			<BackButton to={`/workshop/content/${params.ID}`} />
 			<SC.PageTitle>Worksheets</SC.PageTitle>
 			{errorState || content}
+			<br />
+			<SC.LinkBox>
+				<BackButton to={`/workshop/content/${params.ID}`} />
+			</SC.LinkBox>
 		</>
 	);
 }

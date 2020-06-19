@@ -31,9 +31,7 @@ export default function Intro() {
 				Scroll down to <SC.TextSpan onClick={handleClick}>learn more about the workshops.</SC.TextSpan>
 			</SC.Text>
 
-			<SC.Text>
-				<SC.SectionLink href="#BrowseSection" onClick={handleClick} />
-			</SC.Text>
+			<SC.SectionLink href="#BrowseSection" onClick={handleClick} />
 		</SC.Section>
 	);
 }

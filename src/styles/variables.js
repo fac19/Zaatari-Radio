@@ -5,6 +5,7 @@ export const ocean = '#4f8a8b';
 export const night = '#07031a';
 export const granite = '#474747';
 export const offWhite = '#fbf9fa';
+export const warningRed = '#eb2217';
 
 // dimensions
 export const smallButtonPadding = '0.4rem 0.8rem';
