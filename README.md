@@ -3,7 +3,10 @@
 [![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
 
-preamble
+## Introduction
+This is an app where the product owner can upload workshops so that people from the NGO Action for Change who are on the ground in the Zaatari refugee camp in Jordan can find them and administer them to children.
+
+Due to CV19 the prodcut owner has not been able to go to Jordan so wants a way to provide workshops remotely.
 
 ## Local deployment
 
