@@ -1,12 +1,68 @@
-# HumaniBase (was Zaatari Radio)
+# Zaatari Radio readme
+
+# HumaniBase (previously Zaatari Radio)
 
 [![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
 
-## Introduction
-This is an app where the product owner can upload workshops so that people from the NGO Action for Change who are on the ground in the Zaatari refugee camp in Jordan can find them and administer them to children.
+## Table of Contents
+- [Introduction](#Introduction)
+- [Handover](#Handover)
+	- [Using the Application](#Using-the-Application)
+	- [Further Development](#Further-Development)
+- [Meet the team](#Meet-the-team)
 
-Due to CV19 the product owner has not been able to go to Jordan so wants a way to provide workshops remotely.
+
+
+## Introduction
+
+After working in Zaatari Refugee Camp in Jordan for two years from Zaatari Radio station, the humanitarian project had to temporarily stop broadcasting due to the COVID-19 global pandemic. We wanted to build a solution to continue working remotely and support other people being able to administer the radio-based workshops.
+
+Our solution is an open-source humanitarian platform where individuals and other organisations are free to access our workshops and resources in addition to uploading their our work.
+
+The goal of HumaniBase is to create a platform to support and share knowledge among social projects worldwide so that we can make a bigger impact together.
+
+## Screen Shots -> Gifs
+
+## Tech Stack & Frameworks
+
+
+Built with: 
+
+- React
+    - Allows us to create a dynamic SPA.
+- Airtable
+    - Used as our database and doubled up as a CMS to update the current content on our website. 
+- Netlify Lambda
+    - Handles our HTTP requests between Airtable and our deployed website. There are currently GET and POST requests to create or read current rows in feedback, authors and workshop tables.
+
+- UI/UX
+  - Figma
+      - used to design inital mockups and to conduct user testing with our prototype
+  - Styled Components
+      - Used in conjuction with our figma mockups to design the working version of our web app using react components
+  - Material UI icons
+      - Used in our workshop download page 
+  - Storybook
+      - Used throughout the project to render individual components when building our pages
+  - Bootstrap
+      - Used in our nav bar.
+
+- Testing
+  - Jest
+  - Cypress
+
+## Handover
+### Using the Application
+[Detailed documentation on how to use the application can be found here](https://github.com/fac19/Zaatari-Radio/blob/master/handover/handover.md). It should be noted that for now only users with access to the AirTable account are able to add new workshops.
+
+- **Required:** log in details for [Airtable](https://airtable.com/) to add new workshops
+
+### Further Development
+The project is deployed on [GitHub](https://github.com/) and [Netlify](https://www.netlify.com/). Future developers will require access to these accounts. Please [contact the team](#Meet-the-team) to arrange access.
+
+- **Required:** Permission to contribute to the [GitHub Repo](https://github.com/fac19/Zaatari-Radio)
+- **Required:** Log in details to the Netlify Account so developers can log in to the project on Netlify's Command Line Interface (CLI). 
 
 ## Features
 ### In the current state the website has the following features for voluteers to interact with. 
@@ -23,13 +79,45 @@ Due to CV19 the product owner has not been able to go to Jordan so wants a way t
 
 3. Search through the list of workshops.
 
+## Airtable Content Management System 
+Our web app runs off an airtable database. Once logged in, you have full read and write access to create or edit workshops. 
 
-## Code Review 
+
+When a GET request is made using the Netlify Lambda functions, our app parses the returned JSON object and converts this markdown into React components which are displayed on the page as HTML.
+
+We use the NPM package [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx)
+ to acheive this. 
+
+![](https://i.imgur.com/e6Rz6jO.gif)
+
+## Audio and Iframes
+With the need to embed audio as part of the Radio workshops, content in the Airtable allows you to directly insert an Iframe. 
+
+
+## Leaving Feedback
+As part of the project there is the ability for users to leave feedback on workshops. This can be seen and reviewed in the Airtable in order to collect data about where the workshops have been administered and who has attented.
+
+## Installation
+
 ### Local deployment
 As the Netlify CLI logins are needed please review the deployed version.
 
+
+Once cloned onto your local repo navigate to the folder root and run `npm i` to install all dependecies.
+
+
+## Testing
+### Cypress open
+Without the Netlify CLI login you wont be able to run the correct local server and in turn wont be able to run the Cypress test suite.
+
+There is currently no integration of Cypress into the code coverage.
+
+### NPM Run Test
+
+Within the corresponding react component folders there are Jest tests which run on the `Npm run test` command. The script runs all the react test files. All tests should be passing
+
 ### Storybook
-However, if you'd like to see storybook in action you can clone the repo, `npm i` and `npm run storybook`. Storybook is a place where we developed components in isolation.
+Without the Netlify CLI logins you wont be able to deploy locally. However, if you'd like to see storybook in action you can clone the repo,`npm run storybook`. Storybook is a place where we developed components in isolation.
 
 ![stories](https://i.imgur.com/2e4L66y.png)
 
@@ -77,12 +165,9 @@ However, if you'd like to see storybook in action you can clone the repo, `npm i
 | students_enjoyed             | long-text with RTF  |
 
 
-### List of key dependencies and scripts.
 
-## Story Book
-
-## Netlify Dev
-
-## run Lint
-
-## Cypress open
+## Meet the team :wave: 
+- [Ivo](https://github.com/Ivo-Evans) - Scrum Master / Full Stack
+- [Joe](https://github.com/Joepock123) - UX & UI / Full Stack
+- [James](https://github.com/jamesj-0) - Dev Ops / Full Stack
+- [Vatsal](https://github.com/VatsKan) - Quality Assurance / Full Stack
