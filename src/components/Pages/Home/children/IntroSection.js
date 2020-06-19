@@ -3,6 +3,12 @@ import React from 'react';
 import * as SC from '../style';
 
 export default function Intro() {
+	const handleClick = (e) => {
+		const anchorTarget = document.querySelector('#BrowseSection');
+		e.preventDefault();
+		anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	};
+
 	return (
 		<SC.Section id="AboutSection">
 			<SC.Title>About HumaniBase</SC.Title>
@@ -19,6 +25,14 @@ export default function Intro() {
 			<SC.Text>
 				The goal of HumaniBase is to create a platform to support and share knowledge among social projects worldwide so that we can make a bigger
 				impact together.
+			</SC.Text>
+
+			<SC.Text>
+				Scroll down to <SC.TextSpan onClick={handleClick}>learn more about the workshops.</SC.TextSpan>
+			</SC.Text>
+
+			<SC.Text>
+				<SC.SectionLink href="#BrowseSection" onClick={handleClick} />
 			</SC.Text>
 		</SC.Section>
 	);

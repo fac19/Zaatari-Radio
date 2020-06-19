@@ -7,6 +7,15 @@ export const HomeContainer = styled.div`
 	padding: 0 ${vars.homeHorizontalPadding};
 `;
 
+export const TextSpan = styled.span`
+	font-weight: bold;
+	cursor: pointer;
+
+	&:hover {
+		color: ${vars.sand};
+	}
+`;
+
 // LanderSection Syles
 export const LanderHeader = styled.header`
 	background: ${vars.sand};
@@ -53,14 +62,26 @@ export const LanderText = styled.p`
 	}
 `;
 
-export const LanderLink = styled.a`
+export const SectionLink = styled.a`
 	font-family: ${vars.standardFont};
-	font-size: 5rem;
+	font-size: 3rem;
 	color: ${vars.night};
+	margin: 0 auto;
 
 	&:hover {
-		color: ${vars.offWhite};
+		color: ${vars.sand};
 		text-decoration: none;
+	}
+
+	&::after {
+		content: '\\290B';
+	}
+`;
+
+export const LanderLink = styled(SectionLink)`
+	font-size: 5rem;
+	&:hover {
+		color: ${vars.offWhite};
 	}
 
 	&::after {
@@ -78,26 +99,11 @@ export const LanderLink = styled.a`
 	}
 `;
 
-// export const LanderLink = styled(Link)`
-// 	font-family: ${vars.standardFont};
-// 	font-size: 5rem;
-// 	color: ${vars.night};
-
-// 	&:hover {
-// 		color: ${vars.offWhite};
-// 		text-decoration: none;
-// 	}
-
-// 	&::after {
-// 		content: '\\27F1';
-// 	}
-
-// 	animation: bouncing 0.7s 3s infinite alternate;
-// 	@keyframes bouncing {
-// 		0% { transform: translateY(0); }
-// 		100% { transform: translateY(-25px); }
-// 	}
-// `;
+export const BackToTopLink = styled(SectionLink)`
+	&::after {
+		content: '\\290A';
+	}
+`;
 
 export const Icon = () => (
 	<svg width="21" height="20" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,16 +123,24 @@ export const Icon = () => (
 );
 
 // Shared Styles
-export const Section = styled.section`
+export const SectionLanderTitle = styled.section`
 	padding-top: 2rem;
 	margin: 0 15%;
+
 	@media only screen and (max-width: 600px) {
 		margin: 0 0.3rem;
 	}
 `;
 
-export const SectionLanderLink = styled(Section)`
+export const SectionLanderLink = styled(SectionLanderTitle)`
 	display: flex;
+	justify-content: center;
+`;
+
+export const Section = styled(SectionLanderTitle)`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 `;
 

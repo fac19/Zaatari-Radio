@@ -17,7 +17,7 @@ const NavLink = styled(Link)`
 
 export default function NavBar() {
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+		<Navbar id="NavBar" collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<Navbar.Brand>
 				<NavLink to="/">HumaniBase</NavLink>
 			</Navbar.Brand>

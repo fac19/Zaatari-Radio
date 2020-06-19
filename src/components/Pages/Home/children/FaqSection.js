@@ -13,8 +13,14 @@ function FAQ({ q, a }) {
 }
 
 export default function FAQs() {
+	const handleClick = (e) => {
+		const anchorTarget = document.querySelector('#NavBar');
+		e.preventDefault();
+		anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	};
+
 	return (
-		<SC.Section>
+		<SC.Section id="FaqSection">
 			<SC.Title>FAQs</SC.Title>
 			<FAQ
 				q="How do I access workshops?"
@@ -28,6 +34,14 @@ export default function FAQs() {
 				q="How can I contact other organisations?"
 				a="Once a member, you will be able to access the profile of other members who have contributed to the database. Ask specific questions about projects, open conversations and start collaborating."
 			/>
+
+			<SC.Text>
+				Back to <SC.TextSpan onClick={handleClick}>the top.</SC.TextSpan>
+			</SC.Text>
+
+			<SC.Text>
+				<SC.BackToTopLink href="#NavBar" onClick={handleClick} />
+			</SC.Text>
 		</SC.Section>
 	);
 }

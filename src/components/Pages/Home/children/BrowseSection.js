@@ -4,8 +4,14 @@ import LandingButton from '../../../buttons/LandingButton';
 import * as SC from '../style';
 
 export default function Browse() {
+	const handleClick = (e) => {
+		const anchorTarget = document.querySelector('#ContributeSection');
+		e.preventDefault();
+		anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	};
+
 	return (
-		<SC.Section>
+		<SC.Section id="BrowseSection">
 			<SC.Title>Browse Current Radio Workshops</SC.Title>
 			<SC.Text>
 				From grassroot projects to experienced organisations, find specialised audio workshops to inspire your next humanitarian project. Use the
@@ -18,6 +24,14 @@ export default function Browse() {
 			</SC.Text>
 
 			<LandingButton innerText="Go To The Workshops" to="/workshops" />
+
+			<SC.Text>
+				Scroll down to <SC.TextSpan onClick={handleClick}>learn how to contribute.</SC.TextSpan>
+			</SC.Text>
+
+			<SC.Text>
+				<SC.SectionLink href="#ContributeSection" onClick={handleClick} />
+			</SC.Text>
 		</SC.Section>
 	);
 }
