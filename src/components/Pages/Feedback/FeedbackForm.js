@@ -12,6 +12,7 @@ import TitleBar from '../../WorkshopHeader/TitleBar';
 export default function FeedbackForm({ ID }) {
 	const [nameError, setNameError] = React.useState('');
 	const [emailError, setEmailError] = React.useState('');
+	const [submissionError, setSubmissionError] = React.useState('');
 	const [submitted, setSubmitted] = React.useState(false);
 	const { register, handleSubmit } = useForm();
 	const history = useHistory();
@@ -28,8 +29,10 @@ export default function FeedbackForm({ ID }) {
 			.then(() => {
 				history.push(`/workshop/overview/${ID}`);
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
+				setSubmissionError(
+					<SC.ErrorMessage>We couldn&apost submit this feedback - are you sure your URL contains a valid workshop ID?</SC.ErrorMessage>,
+				);
 			});
 	};
 
@@ -47,7 +50,11 @@ export default function FeedbackForm({ ID }) {
 						ref={register({
 							required: true,
 							validate: (value) => {
-								return /.+\s.+/i.test(value) || setNameError('Please enter your first and second name');
+								if (/.+\s.+/i.test(value)) {
+									setNameError('');
+									return true;
+								}
+								return setNameError(<SC.ErrorMessage>Please enter your first and second name</SC.ErrorMessage>);
 							},
 						})}
 					/>
@@ -63,7 +70,11 @@ export default function FeedbackForm({ ID }) {
 						ref={register({
 							required: true,
 							validate: (value) => {
-								return /\S+@\S+\.\S+/i.test(value) || setEmailError('') || setEmailError('Please enter a valid email');
+								if (/\S+@\S+\.\S+/i.test(value)) {
+									setEmailError('');
+									return true;
+								}
+								return setEmailError(<SC.ErrorMessage>Please enter a valid email</SC.ErrorMessage>);
 							},
 						})}
 					/>
@@ -106,7 +117,8 @@ export default function FeedbackForm({ ID }) {
 					Public Comment
 					<SC.FormText id="public_comment" name="public_comment" ref={register} />
 				</SC.FormLabel>
-				<SC.FormButton type="submit" innerText="Submit" />
+				<SC.FormButton type="submit" value="SUBMIT" />
+				{submissionError}
 			</SC.StyledForm>
 		</>
 	);

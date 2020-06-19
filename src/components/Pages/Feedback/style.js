@@ -92,3 +92,8 @@ export const FormButton = styled.input`
 		color: #fff;
 	}
 `;
+
+export const ErrorMessage = styled.p`
+	font-family: ${vars.standardFont};
+	color: ${vars.warningRed};
+`;
