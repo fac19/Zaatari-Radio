@@ -59,21 +59,21 @@ However, if you'd like to see storybook in action you can clone the repo, `npm i
 | title                        | data                |
 | ---------------------------- | ------------------- |
 | workshop_id                  | integer foreign-key |
-| content                      | number              |
-| number_of_males              | number              |
-| number_of_females            | number              |
-| number_of_non_binary         | number              |
-| number_no_gender_information | number              |
-| star_rating                  | single-line-text    |
-| comment_rating               | long text           |
-| other_comment                | long text           |
-| name                         | single-line-text    |
-| email                        | email               |
-| organisation                 | single-line-text    |
+| public_comment               | long-text with RTF  |
+| Name                         | single-line-text    |
+| public_comment               | long-text with RTF  | 
+| email 					   | single-line-text 	 |
+| organisation 				   | single-line-text 	 |
+| number_of_atendees		   | integer		 	 |
+| star_rating	   			   | integer		 	 |
+| students_enjoyed             | long-text with RTF  |
+
 
 ## Contributors
 
 With some nice pictures of each of us.
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
