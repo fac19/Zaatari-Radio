@@ -32,7 +32,7 @@ export const Button = styled.a`
 
 export const ButtonContainer = styled.div`
 	background: #ffcb74;
-	margin: 0 20% 0 0.5rem;
+	margin: 0.5rem 20% 0 0.5rem;
 	padding-left: 0.5rem;
 `;
 
