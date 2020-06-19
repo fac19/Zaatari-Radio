@@ -4,6 +4,7 @@ import * as vars from '../../styles/variables';
 export const Article = styled.article`
 	margin: 2.5rem 0 0 0;
 	max-width: ${vars.cardWidth};
+	min-width: ${vars.cardWidth};
 	background: whitesmoke;
 	border-radius: 1%;
 	box-shadow: 5px 5px 5px 5px hsla(0, 10%, 10%, 0.3);
@@ -11,6 +12,7 @@ export const Article = styled.article`
 
 export const Image = styled.img`
 	width: 100%;
+	max-height: 225px;
 	border-radius: 1% 1% 0 0;
 `;
 
@@ -30,7 +32,7 @@ export const Button = styled.a`
 
 export const ButtonContainer = styled.div`
 	background: #ffcb74;
-	margin: 0 20% 0 0.5rem;
+	margin: 0.5rem 20% 0 0.5rem;
 	padding-left: 0.5rem;
 `;
 

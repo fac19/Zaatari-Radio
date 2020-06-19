@@ -29,9 +29,22 @@ WorkshopCard.propTypes = {
 		fields: PropTypes.shape({
 			title: PropTypes.string,
 			duration: PropTypes.string,
-			feedback: PropTypes.string,
-			average_rating: PropTypes.string,
+			feedback: PropTypes.array,
+			average_rating: PropTypes.number,
 			carousel_pictures: PropTypes.array,
 		}),
-	}).isRequired,
+	}),
+};
+
+WorkshopCard.defaultProps = {
+	data: {
+		id: '#',
+		fields: {
+			title: 'Default Workshop',
+			duration: '0',
+			feedback: ['dasfaas', 'asdasdasd'],
+			average_rating: 0,
+			carousel_pictures: [{ url: 'https://picsum.photos/id/1073/640/225' }],
+		},
+	},
 };
