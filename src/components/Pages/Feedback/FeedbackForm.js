@@ -142,7 +142,7 @@ export default function FeedbackForm({ ID }) {
 					Public Comment
 					<SC.FormText id="public_comment" name="public_comment" ref={register} />
 				</SC.FormLabel>
-				<SC.FormButton type="submit" value="SUBMIT" />
+				<SC.FormButton type="submit" value="Submit" />
 				{submissionError}
 				Required fields are marked with aterisks (*)
 			</SC.StyledForm>

@@ -30,4 +30,10 @@ export const StandardCard = () => {
 	);
 };
 
-// Can add card missing props
+export const OversizedImageCard = () => {
+	return (
+		<SC.Main>
+			<WorkshopCard data={data} />
+		</SC.Main>
+	);
+};
