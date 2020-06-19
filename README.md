@@ -16,10 +16,14 @@ Due to CV19 the product owner has not been able to go to Jordan so wants a way t
 - Go to a worksheets page to download attachments for workshop
 - Currently you cannot add a workshop on the FE
 
+## Code Review 
+### Local deployment
+As the Netlify CLI logins are needed please review the deployed version.
 
-## Local deployment
+### Storybook
+However, if you'd like to see storybook in action you can clone the repo, `npm i` and `npm run storybook`. Storybook is a place where we developed components in isolation.
 
-How to deploy locally. Need netlify CLI installed
+![stories](https://i.imgur.com/2e4L66y.png)
 
 ## Database schema
 
