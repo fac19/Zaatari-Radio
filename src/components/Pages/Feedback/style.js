@@ -78,6 +78,7 @@ export const FormButton = styled.input`
 	cursor: pointer;
 	margin: 1rem 0;
 	transition: all 0.3s;
+	text-align: center;
 
 	&:hover {
 		background: #78788c;
