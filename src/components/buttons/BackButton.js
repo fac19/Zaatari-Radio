@@ -8,28 +8,22 @@ const SC = {
 	BlackButton: styled.button`
 		background-color: ${vars.night};
 		color: ${vars.offWhite};
-		font-size: 1em;
-		height: ${vars.smallButtonHeight};
-		border-style: none;
-		text-transform: uppercase;
-
 		font-family: ${vars.standardFont};
-		font-style: normal;
-		font-weight: 300;
-		font-size: 16px;
-		line-height: 19px;
+		font-size: ${vars.smallButtonTextSize};
+		padding: ${vars.smallButtonPadding};
+		border-style: none;
+		cursor: pointer;
 
 		display: flex;
 		align-items: center;
 		text-align: center;
-
-		cursor: pointer;
 
 		transition: all 0.3s;
 		top: 0px;
 		left: 0px;
 
 		&:hover {
+			background: #78788c;
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 			position: relative;
 			top: -2px;
@@ -45,7 +39,7 @@ export default function BackButton({ to }) {
 		history.push(to);
 	}
 
-	return <SC.BlackButton onClick={handleClick}>BACK</SC.BlackButton>;
+	return <SC.BlackButton onClick={handleClick}>Back</SC.BlackButton>;
 }
 
 BackButton.propTypes = {

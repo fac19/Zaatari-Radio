@@ -7,8 +7,8 @@ export const granite = '#474747';
 export const offWhite = '#fbf9fa';
 
 // dimensions
-export const medButtonHeight = '42px';
-export const smallButtonHeight = '38px';
+export const smallButtonPadding = '0.4rem 0.8rem';
+export const medButtonPadding = '0.6rem 1.2rem';
 export const titleBarVerticalPadding = '8px';
 export const mainContainerWidth = '700px';
 export const cardWidth = '40rem';
@@ -24,3 +24,5 @@ export const smallP = '14px';
 export const medP = '16px';
 export const largeP = '18px';
 export const subtitle = '20px';
+export const smallButtonTextSize = '16px';
+export const medButtonTextSize = '20px';

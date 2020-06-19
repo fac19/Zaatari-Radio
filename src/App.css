@@ -1,9 +1,11 @@
 .MuiBackdrop-root {
 	opacity: 0 !important;
+	scroll-behavior: smooth;
 }
 
 main {
 	margin-bottom: 3rem;
+	scroll-behavior: smooth;
 }
 
 body {
