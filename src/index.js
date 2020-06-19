@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import './fonts/DINCondensed-Bold.ttf';
+import App from './App/App';
+import './assets/fonts/DINCondensed-Bold.ttf';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 if (process.env.NODE_ENV !== 'production') {

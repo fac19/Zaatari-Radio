@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as vars from '../../../styles/variables';
+import * as vars from '../../../assets/styles/variables'
 
 // Home styles
 export const HomeContainer = styled.div`

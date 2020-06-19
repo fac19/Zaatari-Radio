@@ -1,6 +1,6 @@
 import React from 'react';
 import WorkshopCard from './WorkshopCard';
-import * as SC from '../Pages/AllWorkshops/style';
+import * as SC from '../../style';
 
 export default {
 	component: WorkshopCard,

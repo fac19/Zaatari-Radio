@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
+import useSpecificWorkshop from '../../../api/hooks/useSpecificWorkshop';
 
 import * as SC from './style';
-import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
+import WorkshopHeader from '../../shared/WorkshopHeader/WorkshopHeader';
 import IntroSection from './children/IntroSection';
 import OverviewSection from './children/OverviewSection';
 import FeedbackSection from './children/FeedbackSection';
-import BackButton from '../../buttons/BackButton';
+import BackButton from '../../shared/Buttons/BackButton';
 
 export default function WorkshopOverview({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState(null);

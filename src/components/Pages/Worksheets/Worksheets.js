@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GetAppIcon from '@material-ui/icons/GetApp';
-import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
-import BackButton from '../../buttons/BackButton';
+import WorkshopHeader from '../../shared/WorkshopHeader/WorkshopHeader';
+import BackButton from '../../shared/Buttons/BackButton';
 import SC from './style';
-import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
+import useSpecificWorkshop from '../../../api/hooks/useSpecificWorkshop'
 
 const downloadAll = (links) => {
 	links.forEach((link) => {

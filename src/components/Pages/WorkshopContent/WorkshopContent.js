@@ -4,11 +4,11 @@ import Markdown from 'markdown-to-jsx';
 
 import * as SC from './style';
 
-import WorkshopHeader from '../../WorkshopHeader/WorkshopHeader';
-import BackButton from '../../buttons/BackButton';
-import PrimaryButton from '../../buttons/PrimaryButton';
+import WorkshopHeader from '../../shared/WorkshopHeader/WorkshopHeader';
+import BackButton from '../../shared/Buttons/BackButton';
+import PrimaryButton from '../../shared/Buttons/PrimaryButton';
 
-import useSpecificWorkshop from '../../../hooks/useSpecificWorkshop';
+import useSpecificWorkshop from '../../../api/hooks/useSpecificWorkshop';
 
 export default function WorkshopContent({ match: { params } }) {
 	const [errorState, setErrorState] = React.useState('');

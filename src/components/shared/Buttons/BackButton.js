@@ -2,11 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import * as vars from '../../styles/variables';
+import * as vars from '../../../assets/styles/variables'
 
 const SC = {
-	SecondaryButton: styled.button`
-		background-color: ${vars.olive};
+	BlackButton: styled.button`
+		background-color: ${vars.night};
 		color: ${vars.offWhite};
 		font-family: ${vars.standardFont};
 		font-size: ${vars.smallButtonTextSize};
@@ -32,20 +32,16 @@ const SC = {
 	`,
 };
 
-export default function OliveButton({ innerText, to }) {
+export default function BackButton({ to }) {
 	const history = useHistory();
-	return (
-		<SC.SecondaryButton
-			onClick={() => {
-				history.push(to);
-			}}
-		>
-			{innerText}
-		</SC.SecondaryButton>
-	);
+
+	function handleClick() {
+		history.push(to);
+	}
+
+	return <SC.BlackButton onClick={handleClick}>Back</SC.BlackButton>;
 }
 
-OliveButton.propTypes = {
-	innerText: PropTypes.string.isRequired,
+BackButton.propTypes = {
 	to: PropTypes.string.isRequired,
 };

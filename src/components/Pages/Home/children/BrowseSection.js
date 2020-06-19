@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import LandingButton from '../../../buttons/LandingButton';
+import LandingButton from '../../../shared/Buttons/LandingButton'
 import * as SC from '../style';
 
 export default function Browse() {

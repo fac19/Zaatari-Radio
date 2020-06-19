@@ -7,7 +7,7 @@ import api from '../../../api/api';
 import * as SC from './style';
 
 import './style.css';
-import TitleBar from '../../WorkshopHeader/TitleBar';
+import TitleBar from '../../shared/WorkshopHeader/children/TitleBar';
 
 export default function FeedbackForm({ ID }) {
 	const [nameError, setNameError] = React.useState('');

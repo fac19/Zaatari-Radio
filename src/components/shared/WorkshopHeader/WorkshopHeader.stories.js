@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleBar from './TitleBar';
+import TitleBar from './children/TitleBar'
 import WorkshopHeader from './WorkshopHeader';
 
 export default { title: 'Workshop Header' };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import * as vars from '../../styles/variables';
+import * as vars from '../../../assets/styles/variables';
 
 const TagText = styled.p`
 	display: inline;

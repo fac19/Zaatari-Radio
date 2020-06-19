@@ -1,6 +1,6 @@
 import React from 'react';
 import * as SC from './style';
-import WorkshopCard from '../../WorkshopCard/WorkshopCard';
+import WorkshopCard from './children/WorkshopCard/WorkshopCard';
 import api from '../../../api/api';
 
 export default function AllWorkshops() {

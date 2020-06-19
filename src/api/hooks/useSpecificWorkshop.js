@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import api from '../api/api';
-import getFromJSON from '../utils/getFromJSON';
+import api from '../api';
+import getFromJSON from './getFromJSON';
 
 export default function useSpecificWorkshop(id, setWorkshop, setErrorState) {
 	useEffect(() => {

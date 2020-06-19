@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FeedbackForm from './FeedbackForm';
-import BackButton from '../../buttons/BackButton';
+import BackButton from '../../shared/Buttons/BackButton'
 
 export default function Feedback({ match: { params } }) {
 	return (

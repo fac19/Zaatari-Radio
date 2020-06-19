@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as vars from '../../styles/variables';
+import * as vars from '../../../assets/styles/variables';
 
 // WorkshopHeader Styles
 export const Header = styled.header`

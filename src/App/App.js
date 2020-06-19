@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Home from './components/Pages/Home/Home';
-import Nav from './components/Nav/Nav';
-import AllWorkshops from './components/Pages/AllWorkshops/AllWorkshops';
-import WorkshopOverview from './components/Pages/workshopOverview/WorkshopOverview';
+import Home from '../components/pages/Home/Home';
+import Nav from '../components/shared/Nav/Nav';
+import AllWorkshops from '../components/pages/AllWorkshops/AllWorkshops';
+import WorkshopOverview from '../components/pages/WorkshopOverview/WorkshopOverview';
 // import WorkshopWorksheet from './components/Pages/WorkshopWorksheet';
-import WorkshopContent from './components/Pages/WorkshopContent/WorkshopContent';
-import Worksheets from './components/Pages/Worksheets/Worksheets';
-import Feedback from './components/Pages/Feedback/Feedback';
+import WorkshopContent from '../components/pages/WorkshopContent/WorkshopContent';
+import Worksheets from '../components/pages/Worksheets/Worksheets';
+import Feedback from '../components/pages/Feedback/Feedback';
 
 import './App.css';
 

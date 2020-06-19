@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as vars from '../../../styles/variables';
+import * as vars from '../../../assets/styles/variables';
 
 export const MainContainer = styled.section`
 	display: flex;
