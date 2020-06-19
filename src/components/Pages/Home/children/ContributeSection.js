@@ -28,9 +28,7 @@ export default function Contribute() {
 				Scroll down <SC.TextSpan onClick={handleClick}>for FAQs.</SC.TextSpan>
 			</SC.Text>
 
-			<SC.Text>
-				<SC.SectionLink href="#FaqSection" onClick={handleClick} />
-			</SC.Text>
+			<SC.SectionLink href="#FaqSection" onClick={handleClick} />
 		</SC.Section>
 	);
 }

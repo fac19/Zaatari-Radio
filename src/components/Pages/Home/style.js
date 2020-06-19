@@ -66,7 +66,7 @@ export const SectionLink = styled.a`
 	font-family: ${vars.standardFont};
 	font-size: 3rem;
 	color: ${vars.night};
-	margin: 0 auto;
+	text-align: center;
 
 	&:hover {
 		color: ${vars.sand};
