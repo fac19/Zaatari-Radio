@@ -1,9 +1,9 @@
 @font-face {
 	font-family: 'DIN';
-	src: local('DINCondensed-Bold'), url(./fonts/DINCondensed-Bold.ttf) format('truetype');
+	src: local('DINCondensed-Bold'), url(./assets/fonts/DINCondensed-Bold.ttf) format('truetype');
 }
 
 @font-face {
 	font-family: 'Roboto';
-	src: local('Roboto-Regular'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+	src: local('Roboto-Regular'), url(./assets/fonts/Roboto-Regular.ttf) format('truetype');
 }
