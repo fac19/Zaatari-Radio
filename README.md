@@ -5,12 +5,18 @@
 [![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
 
-## Table of Contents
-- [Introduction](#Introduction)
+## Contents
+- [Project Overview](#Project-Overview)
+- [Meet the team ](#Meet-the-team)
+- [Tech Stack](#Tech-Stack)
+- [Features](#Features)
 - [Handover](#Handover)
 	- [Using the Application](#Using-the-Application)
 	- [Further Development](#Further-Development)
-- [Meet the team](#Meet-the-team)
+	- [Airtable Content Management System ](#Airtable-Content-Management-System)
+	- [Installation](#Installation)
+	- [Testing](#Testing)
+	- [Database schema](#Database-schema)
 
 ## Project Overview
 ![](https://i.imgur.com/gjIQp6X.gif)
@@ -91,7 +97,7 @@ When a GET request is made using the Netlify Lambda functions, our app parses th
 
 We use the NPM package [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) to acheive this. 
 
-![](https://i.imgur.com/e6Rz6jO.gif)
+![GIF](https://i.imgur.com/e6Rz6jO.gif) 
 
 ### Audio and Iframes
 With the need to embed audio as part of the Radio workshops, content in the Airtable allows you to directly insert an Iframe. 
