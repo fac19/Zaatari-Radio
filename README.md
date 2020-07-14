@@ -1,22 +1,7 @@
-# Zaatari Radio readme
-
 # HumaniBase (previously Zaatari Radio)
 
 [![Build Status](https://travis-ci.com/fac19/Zaatari-Radio.svg?branch=master)](https://travis-ci.com/fac19/Zaatari-Radio)
 [![codecov](https://codecov.io/gh/fac19/Zaatari-Radio/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/Zaatari-Radio)
-
-## Contents
-- [Project Overview](#Project-Overview)
-- [Meet the team ](#Meet-the-team)
-- [Tech Stack](#Tech-Stack)
-- [Features](#Features)
-- [Handover](#Handover)
-	- [Using the Application](#Using-the-Application)
-	- [Further Development](#Further-Development)
-	- [Airtable Content Management System ](#Airtable-Content-Management-System)
-	- [Installation](#Installation)
-	- [Testing](#Testing)
-	- [Database schema](#Database-schema)
 
 ## Project Overview
 ![](https://i.imgur.com/gjIQp6X.gif)
@@ -36,6 +21,19 @@ The goal of HumaniBase is to create a platform to support and share knowledge am
 - [Joe](https://github.com/Joepock123) - UX & UI / Full Stack 🖌️
 - [James](https://github.com/jamesj-0) - Dev Ops / Full Stack :desktop_computer: 
 - [Vatsal](https://github.com/VatsKan) - Quality Assurance / Full Stack :heavy_check_mark:
+
+## Contents
+- [Project Overview](#Project-Overview)
+- [Meet the team ](#Meet-the-team)
+- [Tech Stack](#Tech-Stack)
+- [Features](#Features)
+- [Handover](#Handover)
+	- [Using the Application](#Using-the-Application)
+	- [Further Development](#Further-Development)
+	- [Airtable Content Management System ](#Airtable-Content-Management-System)
+	- [Installation](#Installation)
+	- [Testing](#Testing)
+	- [Database schema](#Database-schema)
 
 ## Tech Stack
 ![](https://i.imgur.com/WLodkpm.png)
